@@ -44,6 +44,12 @@ public class LevelManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.R)) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+        if (Input.GetKeyDown(KeyCode.Minus)) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-1);
+        }
+        if (Input.GetKeyDown(KeyCode.Equals)) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     public void AddPenalty(float timePenalty = 1) {

@@ -5,6 +5,7 @@ using UnityEngine;
 public class HurtZone : MonoBehaviour
 {
     LevelManager levelManager;
+    public float force = 20;
     // Depending on what we want the HurtZone to do
     // Ex. Add time, Restart game, Move back to last safe point
 
@@ -18,6 +19,10 @@ public class HurtZone : MonoBehaviour
         {
             Debug.Log("Player Hurt!");
             levelManager.AddPenalty(5);
+            Rigidbody2D rigid = collision.gameObject.GetComponent<Rigidbody2D>();
+            if (rigid != null) {
+                rigid.AddForce(Vector2.up * force,ForceMode2D.Impulse);
+            }
         }
     }
 }

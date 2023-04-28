@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RecordManager : MonoBehaviour
-{
+public class RecordManager : MonoBehaviour {
     public static RecordManager instance;
 
     public float[] bestTimes;
@@ -14,6 +13,7 @@ public class RecordManager : MonoBehaviour
     private void Awake() {
         if (instance == null) {
             instance = this;
+            transform.parent = null;
             DontDestroyOnLoad(gameObject);
         } else {
             Destroy(gameObject);
