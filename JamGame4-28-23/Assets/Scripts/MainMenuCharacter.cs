@@ -10,6 +10,8 @@ public class MainMenuController : MonoBehaviour
     HingeJoint2D joint;
     GameObject spawnedBreakable;
     GameObject spawnPoint;
+    public float blockSpeed = 3f;
+    public float blockSpawnTime = 10f;
 
     void Start()
     {
@@ -29,4 +31,10 @@ public class MainMenuController : MonoBehaviour
             maxMotorTorque = motorForce,
         };
     }
+
+    void SpawnOnObject()
+    {
+        Instantiate(spawnedBreakable, spawnPoint.transform.position, Quaternion.identity);
+    }
 }
+
