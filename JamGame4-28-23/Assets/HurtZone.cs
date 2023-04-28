@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class HurtZone : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // Depending on what we want the HurtZone to do
+    // Ex. Add time, Restart game, Move back to last safe point
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Player Hurt!");
+        }
     }
 }
