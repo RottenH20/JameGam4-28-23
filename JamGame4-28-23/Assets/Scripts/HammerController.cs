@@ -15,7 +15,7 @@ public class HammerController : MonoBehaviour
     }
 
     private void Update() {
-        rotation = Input.GetAxisRaw("Horizontal");
+        rotation = -Input.GetAxisRaw("Horizontal");
     }
 
     private void FixedUpdate() {
