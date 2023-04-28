@@ -45,4 +45,8 @@ public class LevelManager : MonoBehaviour {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
+
+    public void AddPenalty(float timePenalty = 1) {
+        penalties += timePenalty;
+    }
 }
