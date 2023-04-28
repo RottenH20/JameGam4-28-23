@@ -4,23 +4,29 @@ using UnityEngine;
 
 public class Breakable : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int health = 1; // Amount of times to hit object before it breaks
+    public float minimumVelocity = 3; // Amount of velocity needed to reduce health
+    Rigidbody2D rb;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        rb = GameObject.FindWithTag("Hammer").GetComponent<Rigidbody2D>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Breakable")
+        if (rb.velocity.magnitude < minimumVelocity) // If velocity is not met
         {
-            Destroy(collision.gameObject);
+            return;
+        }
+
+        if (collision.gameObject.tag == "Hammer") // Make sure it was the hammer that touched
+        {
+            health--;
+            if (health == 0)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }
