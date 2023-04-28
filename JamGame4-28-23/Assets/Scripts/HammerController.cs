@@ -23,5 +23,6 @@ public class HammerController : MonoBehaviour
             motorSpeed = rotationSpeed * rotation,
             maxMotorTorque = motorForce,
         };
+
     }
 }
