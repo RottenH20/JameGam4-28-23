@@ -851,7 +851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  minimumVelocity: 3
+  minimumVelocity: 27
 --- !u!1 &576944239
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,10 +1696,6 @@ PrefabInstance:
     - target: {fileID: 3635230696631529826, guid: e998686097aad3c46ad62d2c2568dd9d, type: 3}
       propertyPath: m_Name
       value: Character
-      objectReference: {fileID: 0}
-    - target: {fileID: 3635230696631529826, guid: e998686097aad3c46ad62d2c2568dd9d, type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3635230696631529848, guid: e998686097aad3c46ad62d2c2568dd9d, type: 3}
       propertyPath: m_RootOrder
