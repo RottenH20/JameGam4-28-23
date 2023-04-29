@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
+    path: Assets/Scenes/artfun2xzscene.unity
     guid: 92f5d05a61ec5fb4e9119ebf6405f9a4
   - enabled: 1
     path: Assets/Scenes/Levels/Level1.unity
