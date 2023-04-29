@@ -23,6 +23,7 @@ public class LevelManager : MonoBehaviour {
     public GameObject WinScreen;
     public TextMeshProUGUI times;
     public Image Medal;
+    public TextMeshProUGUI timeNeeded;
 
     private void Start() {
         levelNumber = SceneManager.GetActiveScene().buildIndex;
@@ -55,6 +56,10 @@ public class LevelManager : MonoBehaviour {
             times.text = "Best Time: " + RecordManager.instance.bestTimes[levelNumber].ToString("0.00") + "\n"
                 + "Current Time: " + finalTime.ToString("0.00");
         }
+
+        timeNeeded.text = "Bronze: " + RecordManager.instance.bronzeMedals[SceneManager.GetActiveScene().buildIndex] + ", " +
+            "Silver: " + RecordManager.instance.silverMedals[SceneManager.GetActiveScene().buildIndex] + ", " +
+            "Gold: " + RecordManager.instance.goldMedals[SceneManager.GetActiveScene().buildIndex];
 
         if (RecordManager.instance.bestTimes[SceneManager.GetActiveScene().buildIndex] < RecordManager.instance.goldMedals[SceneManager.GetActiveScene().buildIndex]) // Gold level achieved
         {
