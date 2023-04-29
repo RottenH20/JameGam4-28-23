@@ -38,11 +38,18 @@ public class LevelManager : MonoBehaviour {
         Time.timeScale = 0;
     }
 
+    public void RestartLevel() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     private void Update() {
         if(finalTime == -1)
             hud.timerText.text = Mathf.CeilToInt(Time.time - startTime + penalties).ToString();
-        if (Input.GetKeyDown(KeyCode.R)) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (Input.GetButtonDown("Restart")) {
+            RestartLevel();
+        }
+        if (Input.GetButtonDown("Quit")) {
+            SceneManager.LoadScene(0);
         }
         if (Input.GetKeyDown(KeyCode.Minus)) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-1);

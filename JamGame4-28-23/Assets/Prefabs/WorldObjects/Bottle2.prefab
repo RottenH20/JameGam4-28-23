@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6550270394655149067}
   - component: {fileID: 3735286281215490328}
   - component: {fileID: 3592372062404911760}
+  - component: {fileID: 6195788532093217568}
   m_Layer: 0
   m_Name: Bottle2
   m_TagString: Untagged
@@ -117,3 +118,16 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &6195788532093217568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545176127930912840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54db32258eeeeb84997b470e8c5e123d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
