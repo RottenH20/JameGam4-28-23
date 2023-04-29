@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 
 public class LevelManager : MonoBehaviour {
@@ -16,9 +17,12 @@ public class LevelManager : MonoBehaviour {
     HammerController player;
     GameObject OldTimeTracker;
 
+    public Sprite goldMedal, silverMedal, bronzeMedal; // Set what each sprite is. Used becuase we are missing Gold/Silver/Bronze medal sprites
+
     // These need to be made public and set in inspector, they are started as inactive and can't be found
     public GameObject WinScreen;
     public TextMeshProUGUI times;
+    public Image Medal;
 
     private void Start() {
         levelNumber = SceneManager.GetActiveScene().buildIndex;
@@ -47,11 +51,22 @@ public class LevelManager : MonoBehaviour {
 
             times.text = "Best Time: " + finalTime.ToString("0.00") + "\n"
                 + "Current Time: " + finalTime.ToString("0.00");
-            //hud.timerText.text = "New best time: " + finalTime.ToString("0.00") + "   -   R to restart";
         } else {
             times.text = "Best Time: " + RecordManager.instance.bestTimes[levelNumber].ToString("0.00") + "\n"
                 + "Current Time: " + finalTime.ToString("0.00");
-                //= "You: " + finalTime.ToString("0.00") + "   -   Best: " + RecordManager.instance.bestTimes[levelNumber].ToString("0.00") + "   -   R to restart";
+        }
+
+        if (RecordManager.instance.bestTimes[SceneManager.GetActiveScene().buildIndex] < RecordManager.instance.goldMedals[SceneManager.GetActiveScene().buildIndex]) // Gold level achieved
+        {
+            Medal.sprite = goldMedal;
+        }
+        else if (RecordManager.instance.bestTimes[SceneManager.GetActiveScene().buildIndex] < RecordManager.instance.silverMedals[SceneManager.GetActiveScene().buildIndex]) // Silver level achieved
+        {
+            Medal.sprite = silverMedal;
+        }
+        else // Bronze level achieved
+        {
+            Medal.sprite = bronzeMedal;
         }
         //Time.timeScale = 0;
     }

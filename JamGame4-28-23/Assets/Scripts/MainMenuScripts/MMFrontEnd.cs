@@ -11,10 +11,11 @@ public class MMFrontEnd : MonoBehaviour
 {
     Animator transition;
     private string tmp;
-    public bool useMedals = false;
+    public bool useMedals = false; // Set to true if its your main menu
     public Sprite goldMedal, silverMedal, bronzeMedal;
     private GameObject MedalsParent;
 
+    // Pretty poorly written. Sorry :(
     private void Start()
     {
         transition = GameObject.Find("CircleFade").GetComponent<Animator>();
