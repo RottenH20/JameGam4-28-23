@@ -36,6 +36,7 @@ public class LevelManager : MonoBehaviour {
             hud.timerText.text = "New best time: " + finalTime.ToString("0.00") + "   -   R to restart";
         } else {
             hud.timerText.text = "You: " + finalTime.ToString("0.00") + "   -   Best: " + RecordManager.instance.bestTimes[levelNumber].ToString("0.00") + "   -   R to restart";
+
         }
         Time.timeScale = 0;
     }
