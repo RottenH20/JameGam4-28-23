@@ -40,8 +40,7 @@ public class LevelManager : MonoBehaviour {
 
         OldTimeTracker.SetActive(false); // We set old time to false (got in the way of end screen)
         WinScreen.SetActive(true);
-        player.gameObject.transform.Find("SlimeVisuals").gameObject.SetActive(false); // Hide old player
-        player.gameObject.transform.Find("Square (1)").gameObject.SetActive(false); // Hide hammer
+        player.gameObject.SetActive(false); 
 
         if (finalTime < RecordManager.instance.bestTimes[levelNumber] || RecordManager.instance.bestTimes[levelNumber] < 0) {
             RecordManager.instance.bestTimes[levelNumber] = finalTime; // Set new best Time
