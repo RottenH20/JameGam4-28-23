@@ -28,7 +28,7 @@ public class Breakable : MonoBehaviour
             particles.Emit(50);
             particles.transform.parent = null;
             Destroy(particles.gameObject, 5);
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

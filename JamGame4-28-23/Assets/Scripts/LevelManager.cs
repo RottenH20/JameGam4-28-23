@@ -13,11 +13,13 @@ public class LevelManager : MonoBehaviour {
     int levelNumber;
 
     HudReferenceManager hud;
+    HammerController player;
 
     private void Start() {
         levelNumber = SceneManager.GetActiveScene().buildIndex;
         hud = FindObjectOfType<HudReferenceManager>();
         OnStartLevel();
+        player = FindObjectOfType<HammerController>();
     }
 
     public void OnStartLevel() {
@@ -63,6 +65,7 @@ public class LevelManager : MonoBehaviour {
 
     public void AddPenalty(float timePenalty = 1) {
         penalties += timePenalty;
+        player.Damage();
     }
 
     //public string RoundTime(float t) {
