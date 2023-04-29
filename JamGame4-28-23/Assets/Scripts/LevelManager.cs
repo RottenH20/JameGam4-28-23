@@ -14,12 +14,18 @@ public class LevelManager : MonoBehaviour {
 
     HudReferenceManager hud;
     HammerController player;
+    GameObject OldTimeTracker;
+
+    // These need to be made public and set in inspector, they are started as inactive and can't be found
+    public GameObject WinScreen;
+    public TextMeshProUGUI times;
 
     private void Start() {
         levelNumber = SceneManager.GetActiveScene().buildIndex;
         hud = FindObjectOfType<HudReferenceManager>();
         OnStartLevel();
         player = FindObjectOfType<HammerController>();
+        OldTimeTracker = GameObject.Find("CurrentUITime");
     }
 
     public void OnStartLevel() {
@@ -30,14 +36,25 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void CompleteLevel() {
-        finalTime = Time.time - startTime + penalties;
-        if(finalTime < RecordManager.instance.bestTimes[levelNumber] || RecordManager.instance.bestTimes[levelNumber] < 0) {
-            RecordManager.instance.bestTimes[levelNumber] = finalTime;
-            hud.timerText.text = "New best time: " + finalTime.ToString("0.00") + "   -   R to restart";
+        finalTime = Time.time - startTime + penalties; // Computes currentTime
+
+        OldTimeTracker.SetActive(false); // We set old time to false (got in the way of end screen)
+        WinScreen.SetActive(true);
+        player.gameObject.transform.Find("SlimeVisuals").gameObject.SetActive(false); // Hide old player
+        player.gameObject.transform.Find("Square (1)").gameObject.SetActive(false); // Hide hammer
+
+        if (finalTime < RecordManager.instance.bestTimes[levelNumber] || RecordManager.instance.bestTimes[levelNumber] < 0) {
+            RecordManager.instance.bestTimes[levelNumber] = finalTime; // Set new best Time
+
+            times.text = "Best Time: " + finalTime.ToString("0.00") + "\n"
+                + "Current Time: " + finalTime.ToString("0.00");
+            //hud.timerText.text = "New best time: " + finalTime.ToString("0.00") + "   -   R to restart";
         } else {
-            hud.timerText.text = "You: " + finalTime.ToString("0.00") + "   -   Best: " + RecordManager.instance.bestTimes[levelNumber].ToString("0.00") + "   -   R to restart";
+            times.text = "Best Time: " + RecordManager.instance.bestTimes[levelNumber].ToString("0.00") + "\n"
+                + "Current Time: " + finalTime.ToString("0.00");
+                //= "You: " + finalTime.ToString("0.00") + "   -   Best: " + RecordManager.instance.bestTimes[levelNumber].ToString("0.00") + "   -   R to restart";
         }
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
 
     public void RestartLevel() {
