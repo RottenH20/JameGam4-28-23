@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5304909489217593370}
   - component: {fileID: 6134664638942951519}
-  - component: {fileID: 4891316587637846995}
+  - component: {fileID: 2425705949531122098}
+  - component: {fileID: 1932577855408800425}
   m_Layer: 0
   m_Name: Paintbrush
   m_TagString: Untagged
@@ -85,8 +86,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!68 &4891316587637846995
-EdgeCollider2D:
+--- !u!70 &2425705949531122098
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -98,23 +99,22 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 0.18182278, y: -0.21747303}
-  - {x: -0.0053696632, y: -0.3685112}
-  - {x: -0.19796038, y: -0.2339468}
-  - {x: -0.18357944, y: 2.8180695}
-  - {x: -0.4843545, y: 2.9987164}
-  - {x: -0.48803568, y: 3.8014708}
-  - {x: -0.6167941, y: 4.31536}
-  - {x: 0.0029511452, y: 4.6483965}
-  - {x: 0.57239723, y: 4.341529}
-  - {x: 0.44853592, y: 3.7690887}
-  - {x: 0.46244144, y: 3.00597}
-  - {x: 0.1495452, y: 2.754099}
-  - {x: 0.1854415, y: -0.2019167}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+  m_Offset: {x: 0.006026745, y: -1.6630847}
+  m_Size: {x: 0.31292439, y: 3.2998462}
+  m_Direction: 0
+--- !u!70 &1932577855408800425
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8374698711426094402}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00602746, y: 0.75636506}
+  m_Size: {x: 1.045299, y: 1.8089423}
+  m_Direction: 0
