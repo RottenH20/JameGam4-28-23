@@ -3195,7 +3195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f9d67f094b38549b1e37638d260707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useMedals: 1
+  useMedals: 0
 --- !u!1 &1271994247
 GameObject:
   m_ObjectHideFlags: 0

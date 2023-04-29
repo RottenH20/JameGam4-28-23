@@ -17,10 +17,31 @@ public class MMFrontEnd : MonoBehaviour
     {
         transition = GameObject.Find("CircleFade").GetComponent<Animator>();
         if (useMedals)
+        {
             MedalsParent = GameObject.Find("Medals");
-    }
 
-    // Sorry for the bad code MUG if you read this, there is most likely a "cleaner" way to write this, however I dont know how :(
+            // Setup the medals here
+
+            GameObject[] childMedals = new GameObject[MedalsParent.transform.childCount];
+
+            for (int i = 0; i <= MedalsParent.transform.childCount; i++)
+            {
+                childMedals[i] = MedalsParent.transform.GetChild(i).gameObject;
+            }
+
+            for (int i = 1; i <= 9; i++)
+            {
+                if (RecordManager.instance.bestTimes[i] == -1) // Level not beat, no medal
+                {
+
+                }
+                else if (RecordManager.instance.bestTimes[i] < RecordManager.instance.goldMedals[i])
+                {
+
+                }
+            }
+        }
+    }
  
     public void reLoadCurrentScene()
     {
@@ -44,7 +65,7 @@ public class MMFrontEnd : MonoBehaviour
         MatchCollection matches = Regex.Matches(SceneManager.GetActiveScene().name, @"\d+");
 
         int num = 0;
-        foreach (Match match in matches)
+        foreach (Match match in matches) // Pretty useless at only 1 int SHOULD ever return. But it ok :)
         {
             num = int.Parse(match.Value);
         }
