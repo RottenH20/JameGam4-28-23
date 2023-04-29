@@ -10,10 +10,14 @@ public class MMFrontEnd : MonoBehaviour
 {
     Animator transition;
     private string tmp;
+    public bool useMedals = false;
+    private GameObject MedalsParent;
 
     private void Start()
     {
         transition = GameObject.Find("CircleFade").GetComponent<Animator>();
+        if (useMedals)
+            MedalsParent = GameObject.Find("Medals");
     }
 
     // Sorry for the bad code MUG if you read this, there is most likely a "cleaner" way to write this, however I dont know how :(
