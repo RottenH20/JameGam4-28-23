@@ -9,9 +9,6 @@ using System.Text.RegularExpressions;
 public class MMFrontEnd : MonoBehaviour
 {
     Animator transition;
-    public GameObject LevelSelect, Options, Statistics;
-    
-    private bool LevelSelectOn, OptionsOn, StatisticsOn;
     private string tmp;
 
     private void Start()
@@ -20,29 +17,6 @@ public class MMFrontEnd : MonoBehaviour
     }
 
     // Sorry for the bad code MUG if you read this, there is most likely a "cleaner" way to write this, however I dont know how :(
-    public void OptionsPressed()
-    {
-        Options.SetActive(true);
-        LevelSelect.SetActive(false);
-        Statistics.SetActive(false);
-
-    }
-
-    public void StatisticsPressed()
-    {
-
-        Options.SetActive(false);
-        LevelSelect.SetActive(false);
-        Statistics.SetActive(true);
-    }
-
-    public void LevelSelectPressed()
-    {
-
-        Options.SetActive(false);
-        LevelSelect.SetActive(true);
-        Statistics.SetActive(false);
-    }
  
     public void reLoadCurrentScene()
     {
