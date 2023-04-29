@@ -13,6 +13,8 @@ public class MainMenuController : MonoBehaviour
     public GameObject spawnPointRight;
     public float blockSpawnTime = 1.5f;
 
+    Transform hammerParent;
+
     public enum Direction
     {
         Left,
@@ -23,11 +25,34 @@ public class MainMenuController : MonoBehaviour
     {
         joint = GetComponent<HingeJoint2D>();
         InvokeRepeating("SpawnOnObject", 0f, blockSpawnTime);
+        hammerParent = transform.GetChild(0);
     }
 
     private void Update()
     {
         rotation = -1;
+
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+            for (int i = 0; i < hammerParent.childCount; i++)
+            {
+                hammerParent.GetChild(i).gameObject.SetActive(i + 1 == 1);
+            }
+        }
+        if (Input.GetKey(KeyCode.Alpha2))
+        {
+            for (int i = 0; i < hammerParent.childCount; i++)
+            {
+                hammerParent.GetChild(i).gameObject.SetActive(i + 1 == 2);
+            }
+        }
+        if (Input.GetKey(KeyCode.Alpha3))
+        {
+            for (int i = 0; i < hammerParent.childCount; i++)
+            {
+                hammerParent.GetChild(i).gameObject.SetActive(i + 1 == 3);
+            }
+        }
     }
 
     private Direction GetRandomDirection()
