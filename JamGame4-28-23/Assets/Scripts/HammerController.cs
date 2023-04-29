@@ -12,16 +12,33 @@ public class HammerController : MonoBehaviour
     HingeJoint2D joint;
     Animator animator;
     Rigidbody2D rigid;
+    Transform hammerParent;
 
     void Start()
     {
         joint = GetComponent<HingeJoint2D>();
         animator = GetComponentInChildren<Animator>();
         rigid = GetComponent<Rigidbody2D>();
+        hammerParent = transform.GetChild(0);
     }
 
     private void Update() {
         rotation = -Input.GetAxisRaw("Horizontal");
+        if (Input.GetKey(KeyCode.Alpha1)) {
+            for(int i = 0;i < hammerParent.childCount; i++) {
+                hammerParent.GetChild(i).gameObject.SetActive(i + 1 == 1);
+            }
+        }
+        if (Input.GetKey(KeyCode.Alpha2)) {
+            for (int i = 0; i < hammerParent.childCount; i++) {
+                hammerParent.GetChild(i).gameObject.SetActive(i + 1 == 2);
+            }
+        }
+        if (Input.GetKey(KeyCode.Alpha3)) {
+            for (int i = 0; i < hammerParent.childCount; i++) {
+                hammerParent.GetChild(i).gameObject.SetActive(i + 1 == 3);
+            }
+        }
     }
 
     private void FixedUpdate() {
