@@ -842,7 +842,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3635230695481702826
 Transform:
   m_ObjectHideFlags: 0
@@ -1249,7 +1249,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.00999999, y: -1.0700002}
+  m_ConnectedAnchor: {x: -0.00999999, y: -1.07}
   m_UseMotor: 1
   m_Motor:
     m_MotorSpeed: 0
