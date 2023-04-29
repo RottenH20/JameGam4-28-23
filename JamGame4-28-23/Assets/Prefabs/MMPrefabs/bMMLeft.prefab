@@ -125,4 +125,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 100
+  breakEffect: {fileID: 9114296420520545693, guid: 2cc86656230e66e4e80607ed01abaaac, type: 3}
   right: 0
