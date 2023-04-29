@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 734937160794890684, guid: e7490ee6f09a9cd439d37fa8a61c0be8, type: 3}
       propertyPath: m_Name
-      value: CallipersPhysics
+      value: CallipersHanging
       objectReference: {fileID: 0}
     - target: {fileID: 7142605314751979498, guid: e7490ee6f09a9cd439d37fa8a61c0be8, type: 3}
       propertyPath: m_RootOrder
@@ -97,8 +97,8 @@ HingeJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: -0.12794304, y: 2.2833915}
-  m_ConnectedAnchor: {x: 10.292057, y: 10.393391}
+  m_Anchor: {x: 0.0923481, y: 2.3017483}
+  m_ConnectedAnchor: {x: 10.512348, y: 10.411748}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
