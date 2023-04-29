@@ -4,39 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using System.Text.RegularExpressions;
 
 public class MMFrontEnd : MonoBehaviour
 {
-    public Animator transition;
-    public GameObject LevelSelect, Options, Statistics;
-    
-    private bool LevelSelectOn, OptionsOn, StatisticsOn;
+    Animator transition;
     private string tmp;
 
+    private void Start()
+    {
+        transition = GameObject.Find("CircleFade").GetComponent<Animator>();
+    }
+
     // Sorry for the bad code MUG if you read this, there is most likely a "cleaner" way to write this, however I dont know how :(
-    public void OptionsPressed()
-    {
-        Options.SetActive(true);
-        LevelSelect.SetActive(false);
-        Statistics.SetActive(false);
-
-    }
-
-    public void StatisticsPressed()
-    {
-
-        Options.SetActive(false);
-        LevelSelect.SetActive(false);
-        Statistics.SetActive(true);
-    }
-
-    public void LevelSelectPressed()
-    {
-
-        Options.SetActive(false);
-        LevelSelect.SetActive(true);
-        Statistics.SetActive(false);
-    }
  
     public void reLoadCurrentScene()
     {
@@ -53,6 +33,25 @@ public class MMFrontEnd : MonoBehaviour
         tmp = EventSystem.current.currentSelectedGameObject.name; // Get the "text" from the level
 
         StartCoroutine(AnimationLoad(tmp));
+    }
+
+    public void NextLevel()
+    {
+        MatchCollection matches = Regex.Matches(SceneManager.GetActiveScene().name, @"\d+");
+
+        int num = 0;
+        foreach (Match match in matches)
+        {
+            num = int.Parse(match.Value);
+        }
+
+        if (num == 9)
+        {
+            return; // No more levels
+        }
+        num++;
+        string newSceneName = "Level" + num;
+        StartCoroutine(AnimationLoad(newSceneName));
     }
 
     IEnumerator AnimationLoad(string sceneName)
