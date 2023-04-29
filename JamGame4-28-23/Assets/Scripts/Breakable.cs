@@ -8,10 +8,12 @@ public class Breakable : MonoBehaviour
     public int health = 1; // Amount of times to hit object before it breaks
     // Rewrite velocity check code, doesn't work
 
-    ParticleSystem particles;
+    //ParticleSystem particles;
+    public GameObject damageEffectPrefab;
+    public GameObject destroyEffectPrefab;
 
     private void Start() {
-        particles = GetComponentInChildren<ParticleSystem>();
+        //particles = GetComponentInChildren<ParticleSystem>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -22,12 +24,16 @@ public class Breakable : MonoBehaviour
         }
 
         health--;
-        particles.Emit(10);
+        //particles.Emit(10);
+        Destroy(Instantiate(damageEffectPrefab, collision.contacts[0].point, Quaternion.identity),2);
+
 
         if (health == 0) {
-            particles.Emit(50);
-            particles.transform.parent = null;
-            Destroy(particles.gameObject, 5);
+            //particles.Emit(50);
+            //particles.transform.parent = null;
+            //Destroy(particles.gameObject, 5);
+
+            Destroy(Instantiate(destroyEffectPrefab, transform.position, Quaternion.identity),2);
             Destroy(gameObject);
         }
     }

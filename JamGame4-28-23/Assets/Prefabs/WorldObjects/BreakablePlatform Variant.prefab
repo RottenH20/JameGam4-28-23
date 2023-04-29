@@ -93,6 +93,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minVelocity: 10
   health: 4
+  damageEffectPrefab: {fileID: 4845779468432630263, guid: e6abc3063b02e03458f6d8f959a3dac2, type: 3}
+  destroyEffectPrefab: {fileID: 8555242622489708662, guid: 2cf08f520c6a3d840af41be7ae9cd8aa, type: 3}
 --- !u!1001 &510709563177803432
 PrefabInstance:
   m_ObjectHideFlags: 0
