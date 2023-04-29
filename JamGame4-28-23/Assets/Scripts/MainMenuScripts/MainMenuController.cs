@@ -8,14 +8,14 @@ public class MainMenuController : MonoBehaviour
     public float motorForce;
     float rotation;
     HingeJoint2D joint;
-    GameObject spawnedBreakable;
-    GameObject spawnPoint;
-    public float blockSpeed = 3f;
+    public GameObject spawnedBreakable;
+    public GameObject spawnPoint;
     public float blockSpawnTime = 10f;
 
     void Start()
     {
         joint = GetComponent<HingeJoint2D>();
+        InvokeRepeating("SpawnOnObject", 0f, blockSpawnTime);
     }
 
     private void Update()
