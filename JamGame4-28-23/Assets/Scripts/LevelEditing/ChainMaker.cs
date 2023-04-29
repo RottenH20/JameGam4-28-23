@@ -11,6 +11,7 @@ public class ChainMaker : MonoBehaviour {
     public Vector2 connectedAnchor;
     public bool autoConfigureConnectedAnchor = true;
     public bool rebuild;
+
 #if UNITY_EDITOR
     private void Update() {
         if (rebuild) {
