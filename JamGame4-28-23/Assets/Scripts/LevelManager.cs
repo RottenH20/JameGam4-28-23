@@ -31,9 +31,9 @@ public class LevelManager : MonoBehaviour {
         finalTime = Time.time - startTime + penalties;
         if(finalTime < RecordManager.instance.bestTimes[levelNumber] || RecordManager.instance.bestTimes[levelNumber] < 0) {
             RecordManager.instance.bestTimes[levelNumber] = finalTime;
-            hud.timerText.text = "New best time: " + Mathf.CeilToInt(finalTime).ToString() + "   -   R to restart";
+            hud.timerText.text = "New best time: " + finalTime.ToString("0.00") + "   -   R to restart";
         } else {
-            hud.timerText.text = "You: " + Mathf.CeilToInt(finalTime).ToString() + "   -   Best: " + Mathf.CeilToInt(RecordManager.instance.bestTimes[levelNumber]).ToString() + "   -   R to restart";
+            hud.timerText.text = "You: " + finalTime.ToString("0.00") + "   -   Best: " + RecordManager.instance.bestTimes[levelNumber].ToString("0.00") + "   -   R to restart";
         }
         Time.timeScale = 0;
     }
@@ -45,7 +45,7 @@ public class LevelManager : MonoBehaviour {
 
     private void Update() {
         if(finalTime == -1)
-            hud.timerText.text = Mathf.CeilToInt(Time.time - startTime + penalties).ToString();
+            hud.timerText.text = (Time.time - startTime + penalties).ToString("0.00");
         if (Input.GetButtonDown("Restart")) {
             RestartLevel();
         }
@@ -64,4 +64,8 @@ public class LevelManager : MonoBehaviour {
     public void AddPenalty(float timePenalty = 1) {
         penalties += timePenalty;
     }
+
+    //public string RoundTime(float t) {
+    //    return Mathf.CeilToInt(
+    //}
 }
