@@ -39,6 +39,7 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void RestartLevel() {
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -49,6 +50,7 @@ public class LevelManager : MonoBehaviour {
             RestartLevel();
         }
         if (Input.GetButtonDown("Quit")) {
+            Time.timeScale = 1;
             SceneManager.LoadScene(0);
         }
         if (Input.GetKeyDown(KeyCode.Minus)) {
