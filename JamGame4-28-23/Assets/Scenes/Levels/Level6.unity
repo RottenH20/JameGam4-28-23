@@ -241,7 +241,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3635230696631529852, guid: e998686097aad3c46ad62d2c2568dd9d, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -1.0699999
+      value: -1.0700002
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635230696631529853, guid: e998686097aad3c46ad62d2c2568dd9d, type: 3}
+      propertyPath: flyThreshold
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635230696631529853, guid: e998686097aad3c46ad62d2c2568dd9d, type: 3}
+      propertyPath: fallThreshold
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e998686097aad3c46ad62d2c2568dd9d, type: 3}
