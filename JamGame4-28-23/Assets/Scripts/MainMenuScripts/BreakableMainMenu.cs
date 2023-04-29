@@ -7,7 +7,7 @@ public class BreakableMainMenu : MonoBehaviour
     float velocity = 5; // Amount of velocity moving block
     public float rotationSpeed = 10f;
 
-    public Animation breakAnim;
+    public GameObject breakEffect;
 
     private int randomIndex;
     public bool right;
@@ -33,7 +33,7 @@ public class BreakableMainMenu : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        breakAnim.Play("break");
+        Instantiate(breakEffect, transform.position, Quaternion.LookRotation(-Vector3.forward));
         Destroy(this.gameObject);
     }
 }
