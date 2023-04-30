@@ -42,7 +42,7 @@ public class AudioControl : MonoBehaviour
         _audioSources[playingTrackIndex].Play();
         while (_audioSources[playingTrackIndex].volume < .4f)
         {
-            _audioSources[playingTrackIndex].volume += fadeSpeed * 2;
+            _audioSources[playingTrackIndex].volume += fadeSpeed;
             //Debug.Log("Fading In: " + _audioSources[track_index].volume.ToString());
             yield return new WaitForSeconds(0.001f);
             playingTrackVolume = _audioSources[playingTrackIndex].volume;

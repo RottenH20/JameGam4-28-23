@@ -2126,11 +2126,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ea42e7e851bd345b14687f92eb7a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeSpeed: 0.5
+  fadeSpeed: 0.001
   isPlaying: 0
   playingTrackName: Nothing
   playingTrackIndex: 0
-  playingTrackVolume: 1
+  playingTrackVolume: 0.4
   lastTrackName: Nothing
   lastTrackIndex: 0
   lastTrackVolume: 0
