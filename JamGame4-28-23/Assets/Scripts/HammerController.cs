@@ -13,6 +13,8 @@ public class HammerController : MonoBehaviour
     Animator animator;
     Rigidbody2D rigid;
     Transform hammerParent;
+    AudioSource source;
+    public AudioClip bumpSounds;
 
     void Start()
     {
@@ -20,6 +22,7 @@ public class HammerController : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         rigid = GetComponent<Rigidbody2D>();
         hammerParent = transform.GetChild(0);
+        source = GetComponent<AudioSource>();
     }
 
     private void Update() {
