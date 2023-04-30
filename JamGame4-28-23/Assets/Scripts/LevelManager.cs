@@ -80,20 +80,15 @@ public class LevelManager : MonoBehaviour {
         //Time.timeScale = 0;
     }
 
-    public void RestartLevel() {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
     private void Update() {
         if(finalTime == -1)
             hud.timerText.text = (Time.time - startTime + penalties).ToString("0.00");
         if (Input.GetButtonDown("Restart")) {
-            RestartLevel();
+            levelLoader.reLoadCurrentScene();
         }
         if (Input.GetButtonDown("Quit")) {
             Time.timeScale = 1;
-            SceneManager.LoadScene(0);
+            levelLoader.returnToMainMenu();
         }
         if (Input.GetButtonDown("Fire1") && levelComplete) {
             levelLoader.NextLevel();

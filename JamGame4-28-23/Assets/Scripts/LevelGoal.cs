@@ -7,7 +7,7 @@ public class LevelGoal : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collider) {
         if (collider.CompareTag("Player")) {
             if (fail) {
-                FindObjectOfType<LevelManager>().RestartLevel();
+                FindObjectOfType<MMFrontEnd>().reLoadCurrentScene();
             } else {
                 FindObjectOfType<LevelManager>().CompleteLevel();
             }
