@@ -33,7 +33,7 @@ public class BreakableMainMenu : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Instantiate(breakEffect, transform.position, Quaternion.LookRotation(-Vector3.forward));
+        Instantiate(breakEffect, transform.position, Quaternion.Inverse(transform.rotation));
         Destroy(this.gameObject);
     }
 }
