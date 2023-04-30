@@ -33,11 +33,11 @@ public class MMFrontEnd : MonoBehaviour
 
             Image[] childMedals = new Image[MedalsParent.transform.childCount];
 
-            for (int i = 0; i < MedalsParent.transform.childCount - 1; i++) {
+            for (int i = 0; i <= MedalsParent.transform.childCount - 1; i++) {
                 childMedals[i] = MedalsParent.transform.GetChild(i).gameObject.GetComponent<Image>();
             }
 
-            for (int i = 1; i < 9; i++) {
+            for (int i = 1; i <= 9; i++) {
                 if (RecordManager.instance.bestTimes[i] == -1) // Level not beat, no medal
                 {
                     // Do nothing
@@ -95,7 +95,7 @@ public class MMFrontEnd : MonoBehaviour
 
         if (num == 9)
         {
-            return; // No more levels
+            return;
         }
         num++;
         string newSceneName = "Level" + num;
@@ -112,7 +112,11 @@ public class MMFrontEnd : MonoBehaviour
             yield return new WaitForSeconds(2.5f);
         else
             yield return new WaitForSeconds(1f);
-        if (sceneName == "Main Menu")
+        if (SceneManager.GetActiveScene().name == "Intro")
+        {
+            // Keep looping
+        }
+        else if (sceneName == "Main Menu")
         {
             // Play Main Menu Music here
             FindObjectOfType<AudioControl>().PlayMusic("MainMenuMusic");
