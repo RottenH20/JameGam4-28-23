@@ -109,9 +109,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 83e97e5f6c1417646b85fa5a53788e0b, type: 3}
   bumpThreshold: 0
   bumpSounds:
-  - {fileID: 8300000, guid: 084b983131b49e74fa5480561973691d, type: 3}
-  - {fileID: 8300000, guid: 2f3aa2ce7bcaacf4ca4ee0bbaac5349e, type: 3}
-  - {fileID: 8300000, guid: ebe9f7e5246723342a2482d462c5f835, type: 3}
+  - {fileID: 8300000, guid: c1585fb345ec4ac4aa260bacad2d0e48, type: 3}
+  - {fileID: 8300000, guid: dac5063723ce6bf4ca9219e08ecf13b7, type: 3}
+  - {fileID: 8300000, guid: dc8e5ca40cdb85341b5e6d1d5f0f21c5, type: 3}
+  - {fileID: 8300000, guid: d2af17f9607fb1d47b664f3131f38511, type: 3}
 --- !u!61 &627889185388657580
 BoxCollider2D:
   m_ObjectHideFlags: 0

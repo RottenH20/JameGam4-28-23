@@ -1097,11 +1097,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bumpThreshold: 18
   bumpSounds:
-  - {fileID: 8300000, guid: b02df4794eaf95e4885795c452bbd6fc, type: 3}
-  - {fileID: 8300000, guid: 2cdb1085cf4a3a2418a5344ff4211359, type: 3}
-  - {fileID: 8300000, guid: eb9d14b4f5c05524cacbe5c3394fc947, type: 3}
-  - {fileID: 8300000, guid: 0bdc9d1cf6cab89498015a79c4a0b1b0, type: 3}
-  - {fileID: 8300000, guid: dfe4f0a5638b08f4a9e53baf1114c9c4, type: 3}
+  - {fileID: 8300000, guid: 4ab26873468cddd47b1007267222485f, type: 3}
+  - {fileID: 8300000, guid: 20041b01e835f0c4eadd3fae78c2becb, type: 3}
+  - {fileID: 8300000, guid: ec8c096498c1973489c9bf71e66e74c1, type: 3}
+  - {fileID: 8300000, guid: dfd89dbf710a37e4db1b53963c97929d, type: 3}
 --- !u!1 &3635230695692229420
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,7 +1366,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.00999999, y: -1.0700002}
+  m_ConnectedAnchor: {x: -0.01, y: -1.07}
   m_UseMotor: 1
   m_Motor:
     m_MotorSpeed: 0
