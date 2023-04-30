@@ -12,8 +12,13 @@ public class Breakable : MonoBehaviour
     public GameObject damageEffectPrefab;
     public GameObject destroyEffectPrefab;
 
+    public Sprite[] damageSprites;
+
+    SpriteRenderer sr;
+
     private void Start() {
         //particles = GetComponentInChildren<ParticleSystem>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -27,7 +32,6 @@ public class Breakable : MonoBehaviour
         //particles.Emit(10);
         Destroy(Instantiate(damageEffectPrefab, collision.contacts[0].point, Quaternion.identity),2);
 
-
         if (health == 0) {
             //particles.Emit(50);
             //particles.transform.parent = null;
@@ -35,6 +39,22 @@ public class Breakable : MonoBehaviour
 
             Destroy(Instantiate(destroyEffectPrefab, transform.position, Quaternion.identity),2);
             Destroy(gameObject);
+        } else {
+            if (damageSprites.Length > 0) {
+                bool found = false;
+                for (int i = 0; i < damageSprites.Length; i++) {
+                    if (sr.sprite == damageSprites[i]) {
+                        if (i < damageSprites.Length - 1) {
+                            sr.sprite = damageSprites[i + 1];
+                        }
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) {
+                    sr.sprite = damageSprites[0];
+                }
+            }
         }
     }
 }
