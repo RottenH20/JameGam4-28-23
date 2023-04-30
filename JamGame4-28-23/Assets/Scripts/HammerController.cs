@@ -28,7 +28,7 @@ public class HammerController : MonoBehaviour
     }
 
     private void Update() {
-        rotation = -Input.GetAxisRaw("Horizontal");
+        rotation = -Input.GetAxisRaw("Horizontal")+ Input.GetAxisRaw("HorizontalReverse");
         if (Input.GetKey(KeyCode.Alpha1)) {
             for(int i = 0;i < hammerParent.childCount; i++) {
                 hammerParent.GetChild(i).gameObject.SetActive(i + 1 == 1);
