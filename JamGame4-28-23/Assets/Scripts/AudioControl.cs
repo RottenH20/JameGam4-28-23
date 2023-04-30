@@ -19,7 +19,7 @@ public class AudioControl : MonoBehaviour
     {
         _audioSources[playingTrackIndex].volume = 0.000f;
         _audioSources[playingTrackIndex].Play();
-        while (_audioSources[playingTrackIndex].volume < 1f)
+        while (_audioSources[playingTrackIndex].volume < .4f)
         {
             _audioSources[lastTrackIndex].volume -= fadeSpeed;
             _audioSources[playingTrackIndex].volume += fadeSpeed;
@@ -40,7 +40,7 @@ public class AudioControl : MonoBehaviour
     {
         _audioSources[playingTrackIndex].volume = 0.000f;
         _audioSources[playingTrackIndex].Play();
-        while (_audioSources[playingTrackIndex].volume < 1f)
+        while (_audioSources[playingTrackIndex].volume < .4f)
         {
             _audioSources[playingTrackIndex].volume += fadeSpeed * 2;
             //Debug.Log("Fading In: " + _audioSources[track_index].volume.ToString());
