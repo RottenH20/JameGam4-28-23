@@ -939,6 +939,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3635230695525616038}
   - component: {fileID: 3635230695525616037}
+  - component: {fileID: 6976766255697743967}
+  - component: {fileID: 7326671279764142021}
   m_Layer: 6
   m_Name: Hammer
   m_TagString: Hammer
@@ -985,6 +987,121 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!82 &6976766255697743967
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3635230695525616042}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &7326671279764142021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3635230695525616042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a6beedc6dd28b245b270529f17a674e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bumpThreshold: 18
+  bumpSounds:
+  - {fileID: 8300000, guid: b02df4794eaf95e4885795c452bbd6fc, type: 3}
+  - {fileID: 8300000, guid: 2cdb1085cf4a3a2418a5344ff4211359, type: 3}
+  - {fileID: 8300000, guid: eb9d14b4f5c05524cacbe5c3394fc947, type: 3}
+  - {fileID: 8300000, guid: 0bdc9d1cf6cab89498015a79c4a0b1b0, type: 3}
+  - {fileID: 8300000, guid: dfe4f0a5638b08f4a9e53baf1114c9c4, type: 3}
 --- !u!1 &3635230695692229420
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,7 +1367,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.01, y: -1.07}
+  m_ConnectedAnchor: {x: -0.00999999, y: -1.0700002}
   m_UseMotor: 1
   m_Motor:
     m_MotorSpeed: 0
@@ -1275,6 +1392,13 @@ MonoBehaviour:
   motorForce: 400
   fallThreshold: 2
   flyThreshold: 2.25
+  bumpThreshold: 5
+  bumpSounds:
+  - {fileID: 8300000, guid: 85ea098cd11341940bb357d9e7429913, type: 3}
+  - {fileID: 8300000, guid: b6918d5f3a13dfa41babfaa9d396d9bd, type: 3}
+  - {fileID: 8300000, guid: cc1cdaa44024873419c469ef0706394b, type: 3}
+  damageSounds:
+  - {fileID: 8300000, guid: 76ca099c8fcee0c4eb05cd9c7d1a6eae, type: 3}
 --- !u!82 &5640023977917634778
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1287,7 +1411,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0

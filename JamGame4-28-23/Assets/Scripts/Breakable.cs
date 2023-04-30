@@ -16,9 +16,15 @@ public class Breakable : MonoBehaviour
 
     SpriteRenderer sr;
 
+
+    AudioSource source;
+    public float bumpThreshold = 0f;
+    public AudioClip[] bumpSounds;
+
     private void Start() {
         //particles = GetComponentInChildren<ParticleSystem>();
         sr = GetComponent<SpriteRenderer>();
+        source = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -54,6 +60,9 @@ public class Breakable : MonoBehaviour
                 if (!found) {
                     sr.sprite = damageSprites[0];
                 }
+            }
+            if (collision.relativeVelocity.sqrMagnitude > (bumpThreshold * bumpThreshold)) {
+                source.PlayOneShot(RandomExtensions.RandomChoice(bumpSounds));
             }
         }
     }
