@@ -13,6 +13,10 @@ public class HammerController : MonoBehaviour
     Animator animator;
     Rigidbody2D rigid;
     Transform hammerParent;
+    AudioSource source;
+    public float bumpThreshold = 2f;
+    public AudioClip[] bumpSounds;
+    public AudioClip[] damageSounds;
 
     void Start()
     {
@@ -20,6 +24,7 @@ public class HammerController : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         rigid = GetComponent<Rigidbody2D>();
         hammerParent = transform.GetChild(0);
+        source = GetComponent<AudioSource>();
     }
 
     private void Update() {
@@ -72,9 +77,13 @@ public class HammerController : MonoBehaviour
         if (collision.contacts[0].normal.y > 0.33f) {
             animator.SetTrigger("Landing");
         }
+        if(collision.relativeVelocity.sqrMagnitude > (bumpThreshold * bumpThreshold)) {
+            source.PlayOneShot(RandomExtensions.RandomChoice(bumpSounds));
+        }
     }
 
     public void Damage() {
         animator.SetTrigger("Damage");
+        source.PlayOneShot(RandomExtensions.RandomChoice(damageSounds));
     }
 }

@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour {
 
     int levelNumber;
 
+    MMFrontEnd levelLoader;
     HudReferenceManager hud;
     HammerController player;
     GameObject OldTimeTracker;
@@ -24,6 +25,7 @@ public class LevelManager : MonoBehaviour {
     public TextMeshProUGUI times;
     public Image Medal;
     public TextMeshProUGUI timeNeeded;
+    bool levelComplete = false;
 
     private void Start() {
         levelNumber = SceneManager.GetActiveScene().buildIndex;
@@ -31,6 +33,7 @@ public class LevelManager : MonoBehaviour {
         OnStartLevel();
         player = FindObjectOfType<HammerController>();
         OldTimeTracker = GameObject.Find("CurrentUITime");
+        levelLoader = FindObjectOfType<MMFrontEnd>();
     }
 
     public void OnStartLevel() {
@@ -41,6 +44,7 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void CompleteLevel() {
+        levelComplete = true;
         finalTime = Time.time - startTime + penalties; // Computes currentTime
 
         OldTimeTracker.SetActive(false); // We set old time to false (got in the way of end screen)
@@ -91,11 +95,8 @@ public class LevelManager : MonoBehaviour {
             Time.timeScale = 1;
             SceneManager.LoadScene(0);
         }
-        if (Input.GetKeyDown(KeyCode.Minus)) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-1);
-        }
-        if (Input.GetKeyDown(KeyCode.Equals)) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (Input.GetButtonDown("Fire1") && levelComplete) {
+            levelLoader.NextLevel();
         }
     }
 

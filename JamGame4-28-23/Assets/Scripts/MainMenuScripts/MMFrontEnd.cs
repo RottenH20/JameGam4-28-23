@@ -14,33 +14,34 @@ public class MMFrontEnd : MonoBehaviour
     public bool useMedals = false; // Set to true if its your main menu
     public Sprite goldMedal, silverMedal, bronzeMedal;
     private GameObject MedalsParent;
+    public Transform levelSelect;
+    public Transform playButton;
+    public AudioSource crashSound;
 
     // Pretty poorly written. Sorry :(
     private void Start()
     {
         transition = GameObject.Find("CircleFade").GetComponent<Animator>();
-        if (useMedals)
-        {
+    }
+
+    void PrepareMedals() {
+        if (useMedals) {
             MedalsParent = GameObject.Find("Medals");
 
             // Setup the medals here
 
             Image[] childMedals = new Image[MedalsParent.transform.childCount];
 
-            for (int i = 0; i < MedalsParent.transform.childCount - 1; i++)
-            {
+            for (int i = 0; i < MedalsParent.transform.childCount - 1; i++) {
                 childMedals[i] = MedalsParent.transform.GetChild(i).gameObject.GetComponent<Image>();
             }
 
-            for (int i = 1; i < 9; i++)
-            {
+            for (int i = 1; i < 9; i++) {
                 if (RecordManager.instance.bestTimes[i] == -1) // Level not beat, no medal
                 {
                     // Do nothing
                     continue; // Go to next iteration
-                }
-                else
-                {
+                } else {
                     var tempColor = childMedals[i - 1].color;
                     tempColor.a = 255;
                     childMedals[i - 1].color = tempColor; // Set the alpha back to max, we set it to 0 to hide ugly white box
@@ -50,13 +51,11 @@ public class MMFrontEnd : MonoBehaviour
                 if (RecordManager.instance.bestTimes[i] < RecordManager.instance.goldMedals[i]) // Gold level achieved
                 {
                     childMedals[i - 1].sprite = goldMedal;
-                }
-                else if (RecordManager.instance.bestTimes[i] < RecordManager.instance.silverMedals[i]) // Silver level achieved
-                {
+                } else if (RecordManager.instance.bestTimes[i] < RecordManager.instance.silverMedals[i]) // Silver level achieved
+                  {
                     childMedals[i - 1].sprite = silverMedal;
-                }
-                else if (RecordManager.instance.bestTimes[i] < RecordManager.instance.bronzeMedals[i]) // Bronze level achieved
-                {
+                } else if (RecordManager.instance.bestTimes[i] < RecordManager.instance.bronzeMedals[i]) // Bronze level achieved
+                  {
                     childMedals[i - 1].sprite = bronzeMedal;
                 }
             }
@@ -75,6 +74,7 @@ public class MMFrontEnd : MonoBehaviour
 
     public void LevelChoicePressed()
     {
+        crashSound.Play();
         tmp = EventSystem.current.currentSelectedGameObject.name; // Get the "text" from the level
 
         StartCoroutine(AnimationLoad(tmp));
@@ -104,8 +104,11 @@ public class MMFrontEnd : MonoBehaviour
         // Play animation
         transition.SetTrigger("Start");
         // Wait
-        yield return new WaitForSeconds(1); // Change depending on transistion time
-        if (sceneName == "MainMenu")
+        if(SceneManager.GetActiveScene().name == "Main Menu")
+            yield return new WaitForSeconds(2.5f);
+        else
+            yield return new WaitForSeconds(1f);
+        if (sceneName == "Main Menu")
         {
             // Play Main Menu Music here
             //FindObjectOfType<AudioControl>().PlayMusic("MainMenu");
@@ -117,5 +120,11 @@ public class MMFrontEnd : MonoBehaviour
         }
         //Load Scene
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void OpenLevelSelect() {
+        playButton.gameObject.SetActive(false);
+        levelSelect.gameObject.SetActive(true);
+        PrepareMedals();
     }
 }

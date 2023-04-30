@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8374698711426094402, guid: 23b9cb76ff5a4b1498e9298c319fa1e0, type: 3}
       propertyPath: m_Name
-      value: PaintbrushPhysics
+      value: PaintbrushPhysics Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23b9cb76ff5a4b1498e9298c319fa1e0, type: 3}

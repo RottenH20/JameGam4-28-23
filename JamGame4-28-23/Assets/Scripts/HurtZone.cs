@@ -17,7 +17,7 @@ public class HurtZone : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player Hurt!");
+            //Debug.Log("Player Hurt!");
             levelManager.AddPenalty(5);
             Rigidbody2D rigid = collision.gameObject.GetComponent<Rigidbody2D>();
             if (rigid != null) {

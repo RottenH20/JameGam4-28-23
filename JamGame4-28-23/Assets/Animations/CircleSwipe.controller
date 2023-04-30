@@ -33,7 +33,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CircleSwipe_End
-  m_Speed: 2.5
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -8371139645421774863}

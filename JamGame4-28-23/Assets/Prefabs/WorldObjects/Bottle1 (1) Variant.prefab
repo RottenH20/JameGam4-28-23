@@ -7,9 +7,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1820599127558662999, guid: d6bab24811cf196428a4739154f22e56, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3256848287114320634, guid: d6bab24811cf196428a4739154f22e56, type: 3}
       propertyPath: m_Name
-      value: Bottle1 (1)
+      value: Bottle1 (1) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4260957433899779769, guid: d6bab24811cf196428a4739154f22e56, type: 3}
       propertyPath: m_RootOrder
@@ -59,5 +63,7 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e725bbc42a1586c40974672b15de10a4, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2036050853628164909, guid: d6bab24811cf196428a4739154f22e56, type: 3}
+    - {fileID: 1820599127558662999, guid: d6bab24811cf196428a4739154f22e56, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d6bab24811cf196428a4739154f22e56, type: 3}
