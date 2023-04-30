@@ -257,7 +257,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 81abb12e04215ff42b59d0827d672020, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1249,7 +1249,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.00999999, y: -1.07}
+  m_ConnectedAnchor: {x: -0.010000229, y: -1.0699999}
   m_UseMotor: 1
   m_Motor:
     m_MotorSpeed: 0
@@ -1272,8 +1272,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 700
   motorForce: 400
-  fallThreshold: 3
-  flyThreshold: 2
+  fallThreshold: 2
+  flyThreshold: 2.25
 --- !u!1 &3635230696873535223
 GameObject:
   m_ObjectHideFlags: 0
@@ -2119,7 +2119,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 79505abb934fc374eb57861ea293df6e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2738,7 +2738,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 6f4a5cabc0ab79d48940de4ae488b1c7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
