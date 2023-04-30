@@ -1393,11 +1393,16 @@ MonoBehaviour:
   flyThreshold: 2.25
   bumpThreshold: 5
   bumpSounds:
-  - {fileID: 8300000, guid: 85ea098cd11341940bb357d9e7429913, type: 3}
-  - {fileID: 8300000, guid: b6918d5f3a13dfa41babfaa9d396d9bd, type: 3}
-  - {fileID: 8300000, guid: cc1cdaa44024873419c469ef0706394b, type: 3}
+  - {fileID: 8300000, guid: af31dbd5c48bfb94ba83bb2986c858e0, type: 3}
+  - {fileID: 8300000, guid: 4b742b7532ca79042b63dfa006658696, type: 3}
+  - {fileID: 8300000, guid: 3b038185fb317ea458147608d046fc07, type: 3}
+  - {fileID: 8300000, guid: 6eb5ef6cf10c4bb4985a72abd4eeea69, type: 3}
   damageSounds:
-  - {fileID: 8300000, guid: 76ca099c8fcee0c4eb05cd9c7d1a6eae, type: 3}
+  - {fileID: 8300000, guid: fb40cdf57f03b96499999b60d76ea3fa, type: 3}
+  - {fileID: 8300000, guid: b5ddb010a810f404fab590e778ce1d5c, type: 3}
+  - {fileID: 8300000, guid: faff0c1a9565fe0459055df2f9d74f5a, type: 3}
+  - {fileID: 8300000, guid: c1cc182bd886b6d4faa61d2cdd30dcaf, type: 3}
+  - {fileID: 8300000, guid: db800f68da04c36489744c3116a22172, type: 3}
 --- !u!82 &5640023977917634778
 AudioSource:
   m_ObjectHideFlags: 0

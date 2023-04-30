@@ -104,8 +104,11 @@ public class MMFrontEnd : MonoBehaviour
         // Play animation
         transition.SetTrigger("Start");
         // Wait
-        yield return new WaitForSeconds(1.5f); // Change depending on transistion time
-        if (sceneName == "MainMenu")
+        if(SceneManager.GetActiveScene().name == "Main Menu")
+            yield return new WaitForSeconds(2.5f);
+        else
+            yield return new WaitForSeconds(1f);
+        if (sceneName == "Main Menu")
         {
             // Play Main Menu Music here
             //FindObjectOfType<AudioControl>().PlayMusic("MainMenu");

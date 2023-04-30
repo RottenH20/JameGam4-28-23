@@ -3264,12 +3264,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_ReferenceResolution: {x: 960, y: 600}
+  m_ScreenMatchMode: 1
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -3405,8 +3405,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -248.46643, y: -333.52454}
-  m_SizeDelta: {x: 496.9329, y: 316.9859}
+  m_AnchoredPosition: {x: -225.68115, y: -315.14932}
+  m_SizeDelta: {x: 451.3623, y: 280.2354}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1292067262
 MonoBehaviour:
@@ -4687,7 +4687,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d1a59b437e8e5674a87fa7b8bf2acaac, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c355a28b4d5b3d243b8ac25d2c44af65, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.66
   m_Pitch: 1
