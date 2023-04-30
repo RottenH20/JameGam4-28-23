@@ -124,10 +124,22 @@ public class MMFrontEnd : MonoBehaviour
         else if (SceneManager.GetActiveScene().name != "Main Menu")
         {
             // Keep Looping
+            if (int.Parse(sceneName.Substring(5)) == 5 && int.Parse(SceneManager.GetActiveScene().name.Substring(5)) == 4)
+            {
+                FindObjectOfType<AudioControl>().PlayMusic("LevelMusic2");
+            }
         }
         else if (sceneName != "Main Menu")
         {
-            FindObjectOfType<AudioControl>().PlayMusic("LevelMusic");
+            // Keep Looping
+            if (int.Parse(sceneName.Substring(5)) < 5)
+            {
+                FindObjectOfType<AudioControl>().PlayMusic("LevelMusic1");
+            }
+            else
+            {
+                FindObjectOfType<AudioControl>().PlayMusic("LevelMusic2");
+            }
         }
         //Load Scene
         SceneManager.LoadScene(sceneName);
