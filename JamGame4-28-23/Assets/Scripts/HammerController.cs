@@ -71,6 +71,9 @@ public class HammerController : MonoBehaviour
                 animator.SetBool("Left", false);
             }
         }
+        if(hammerParent.transform.localPosition.sqrMagnitude > 2) {
+            hammerParent.transform.localPosition = Vector3.zero;
+        }
 
     }
     private void OnCollisionEnter2D(Collision2D collision) {
