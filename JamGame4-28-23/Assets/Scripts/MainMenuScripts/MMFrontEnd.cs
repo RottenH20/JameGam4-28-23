@@ -16,7 +16,8 @@ public class MMFrontEnd : MonoBehaviour
     private GameObject MedalsParent;
     public Transform levelSelect;
     public Transform playButton;
-    public AudioSource crashSound;
+    public AudioSource crashSound, ClickSound;
+    public AudioSource[] RestartSound = new AudioSource[3];
 
     // Pretty poorly written. Sorry :(
     private void Start()
@@ -64,11 +65,13 @@ public class MMFrontEnd : MonoBehaviour
  
     public void reLoadCurrentScene()
     {
+        PlayRestartSound();
         StartCoroutine(AnimationLoad(SceneManager.GetActiveScene().name));
     }
 
     public void returnToMainMenu()
     {
+        PlayClickSound();
         StartCoroutine(AnimationLoad("Main Menu"));
     }
 
@@ -96,6 +99,7 @@ public class MMFrontEnd : MonoBehaviour
         }
         num++;
         string newSceneName = "Level" + num;
+        PlayClickSound();
         StartCoroutine(AnimationLoad(newSceneName));
     }
 
@@ -104,19 +108,22 @@ public class MMFrontEnd : MonoBehaviour
         // Play animation
         transition.SetTrigger("Start");
         // Wait
-        if(SceneManager.GetActiveScene().name == "Main Menu")
+        if (SceneManager.GetActiveScene().name == "Main Menu")
             yield return new WaitForSeconds(2.5f);
         else
             yield return new WaitForSeconds(1f);
         if (sceneName == "Main Menu")
         {
             // Play Main Menu Music here
-            //FindObjectOfType<AudioControl>().PlayMusic("MainMenu");
+            FindObjectOfType<AudioControl>().PlayMusic("MainMenuMusic");
         }
-        else
+        else if (SceneManager.GetActiveScene().name != "Main Menu")
         {
-            // Play Game Music here
-            //FindObjectOfType<AudioControl>().PlayMusic("GameMusic");
+            // Keep Looping
+        }
+        else if (sceneName != "Main Menu")
+        {
+            FindObjectOfType<AudioControl>().PlayMusic("LevelMusic");
         }
         //Load Scene
         SceneManager.LoadScene(sceneName);
@@ -125,6 +132,20 @@ public class MMFrontEnd : MonoBehaviour
     public void OpenLevelSelect() {
         playButton.gameObject.SetActive(false);
         levelSelect.gameObject.SetActive(true);
+        PlayClickSound();
         PrepareMedals();
+    }
+
+    public void PlayClickSound()
+    {
+        ClickSound.Play();
+    }
+
+    public void PlayRestartSound()
+    {
+        System.Random rnd = new System.Random();
+        int num = rnd.Next(0, 3);
+
+        RestartSound[num].Play();
     }
 }
