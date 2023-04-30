@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &182178534212544308
+--- !u!1 &7991266047609004003
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 182178534212544310}
-  - component: {fileID: 182178534212544311}
+  - component: {fileID: 7991266047609004001}
+  - component: {fileID: 7991266047609004000}
   m_Layer: 0
   m_Name: RecordManager
   m_TagString: Untagged
@@ -17,28 +17,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &182178534212544310
+--- !u!4 &7991266047609004001
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 182178534212544308}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 469.75482, y: 146.38455, z: -2.0430536}
+  m_GameObject: {fileID: 7991266047609004003}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 474.18973, y: 141.14137, z: -3.4731328}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &182178534212544311
+--- !u!114 &7991266047609004000
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 182178534212544308}
+  m_GameObject: {fileID: 7991266047609004003}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4f82e1fe0cd53b42ad82d68987a237f, type: 3}
@@ -54,33 +54,37 @@ MonoBehaviour:
   - -1
   - -1
   - -1
+  - -1
   bronzeMedals:
+  - -1
+  - 120
+  - 80
+  - 60
+  - 60
+  - 300
   - 120
   - 120
-  - 120
-  - 120
-  - 120
-  - 120
-  - 120
-  - 120
-  - 120
+  - 300
+  - 300
   silverMedals:
+  - -1
+  - 45
   - 60
-  - 60
-  - 60
-  - 60
-  - 60
-  - 60
-  - 60
-  - 60
-  - 60
+  - 30
+  - 40
+  - 111
+  - 45
+  - 46
+  - 100
+  - 100
   goldMedals:
+  - -1
+  - 18
   - 30
-  - 30
-  - 30
-  - 30
-  - 30
-  - 30
-  - 30
-  - 30
-  - 30
+  - 16
+  - 11
+  - 50
+  - 33
+  - 32
+  - 60
+  - 66
