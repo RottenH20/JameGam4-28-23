@@ -49,33 +49,38 @@ public class LevelManager : MonoBehaviour {
 
         OldTimeTracker.SetActive(false); // We set old time to false (got in the way of end screen)
         WinScreen.SetActive(true);
-        player.gameObject.SetActive(false); 
-
-        if (finalTime < RecordManager.instance.bestTimes[levelNumber] || RecordManager.instance.bestTimes[levelNumber] < 0) {
-            RecordManager.instance.bestTimes[levelNumber] = finalTime; // Set new best Time
+        player.gameObject.SetActive(false);
+        float bestTime = RecordManager.instance.GetLevelTime(RecordManager.instance.CurrentLevel);
+        if (finalTime < bestTime || bestTime < 0) {
+            RecordManager.instance.SetNewTime(finalTime); // Set new best Time
 
             times.text = "Best Time: " + finalTime.ToString("0.00") + "\n"
                 + "Current Time: " + finalTime.ToString("0.00");
         } else {
-            times.text = "Best Time: " + RecordManager.instance.bestTimes[levelNumber].ToString("0.00") + "\n"
+            times.text = "Best Time: " + bestTime.ToString("0.00") + "\n"
                 + "Current Time: " + finalTime.ToString("0.00");
         }
 
-        timeNeeded.text = "Bronze: " + RecordManager.instance.bronzeMedals[SceneManager.GetActiveScene().buildIndex] + ", " +
-            "Silver: " + RecordManager.instance.silverMedals[SceneManager.GetActiveScene().buildIndex] + ", " +
-            "Gold: " + RecordManager.instance.goldMedals[SceneManager.GetActiveScene().buildIndex];
-
-        if (RecordManager.instance.bestTimes[SceneManager.GetActiveScene().buildIndex] < RecordManager.instance.goldMedals[SceneManager.GetActiveScene().buildIndex]) // Gold level achieved
+        timeNeeded.text = "Bronze: " + RecordManager.instance.GetCurrentLevel().bronzeTime + ", " +
+            "Silver: " + RecordManager.instance.GetCurrentLevel().silverTime + ", " +
+            "Gold: " + RecordManager.instance.GetCurrentLevel().goldTime;
+        RecordManager.Medal medal = RecordManager.instance.GetLevelMedal(RecordManager.instance.CurrentLevel);
+        if (medal == RecordManager.Medal.Gold) // Gold level achieved
         {
+            Medal.enabled = true;
             Medal.sprite = goldMedal;
         }
-        else if (RecordManager.instance.bestTimes[SceneManager.GetActiveScene().buildIndex] < RecordManager.instance.silverMedals[SceneManager.GetActiveScene().buildIndex]) // Silver level achieved
+        else if (medal == RecordManager.Medal.Silver) // Silver level achieved
         {
+            Medal.enabled = true;
             Medal.sprite = silverMedal;
         }
-        else // Bronze level achieved
+        else if (medal == RecordManager.Medal.Bronze) // Bronze level achieved
         {
+            Medal.enabled = true;
             Medal.sprite = bronzeMedal;
+        } else {
+            Medal.enabled = false;
         }
         //Time.timeScale = 0;
     }

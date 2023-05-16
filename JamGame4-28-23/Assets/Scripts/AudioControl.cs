@@ -61,6 +61,8 @@ public class AudioControl : MonoBehaviour
 
     public void PlayMusic(string transformName)
     {
+        if (playingTrackName == transformName)
+            return;
         for (int a = 0; a < _audioSources.Length; a++)
         {
             if (_audioSources[a].name == transformName)

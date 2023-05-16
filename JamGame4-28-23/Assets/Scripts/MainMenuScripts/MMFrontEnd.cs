@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class MMFrontEnd : MonoBehaviour
 {
     Animator transition;
-    private string tmp;
+    private int tmp;
     public bool useMedals = false; // Set to true if its your main menu
     public Sprite goldMedal, silverMedal, bronzeMedal;
     private GameObject MedalsParent;
@@ -38,7 +38,8 @@ public class MMFrontEnd : MonoBehaviour
             }
 
             for (int i = 1; i <= 9; i++) {
-                if (RecordManager.instance.bestTimes[i] == -1) // Level not beat, no medal
+                RecordManager.Medal medal = RecordManager.instance.GetLevelMedal(i - 1);
+                if (medal == RecordManager.Medal.None) // Level not beat, no medal
                 {
                     // Do nothing
                     continue; // Go to next iteration
@@ -49,14 +50,11 @@ public class MMFrontEnd : MonoBehaviour
                 }
 
 
-                if (RecordManager.instance.bestTimes[i] < RecordManager.instance.goldMedals[i]) // Gold level achieved
-                {
+                if (medal == RecordManager.Medal.Gold) { // Gold level achieved
                     childMedals[i - 1].sprite = goldMedal;
-                } else if (RecordManager.instance.bestTimes[i] < RecordManager.instance.silverMedals[i]) // Silver level achieved
-                  {
+                } else if (medal == RecordManager.Medal.Silver) { // Silver level achieved
                     childMedals[i - 1].sprite = silverMedal;
-                } else if (RecordManager.instance.bestTimes[i] < RecordManager.instance.bronzeMedals[i]) // Bronze level achieved
-                  {
+                } else if (medal == RecordManager.Medal.Bronze ){ // Bronze level achieved
                     childMedals[i - 1].sprite = bronzeMedal;
                 }
             }
@@ -71,6 +69,7 @@ public class MMFrontEnd : MonoBehaviour
 
     public void returnToMainMenu()
     {
+        RecordManager.instance.CurrentLevel = -1;
         PlayClickSound();
         StartCoroutine(AnimationLoad("Main Menu"));
     }
@@ -78,29 +77,17 @@ public class MMFrontEnd : MonoBehaviour
     public void LevelChoicePressed()
     {
         crashSound.Play();
-        tmp = EventSystem.current.currentSelectedGameObject.name; // Get the "text" from the level
-
-        StartCoroutine(AnimationLoad(tmp));
+        tmp =  int.Parse(EventSystem.current.currentSelectedGameObject.name.Substring(EventSystem.current.currentSelectedGameObject.name.Length-1)); // Get the "text" from the level
+        RecordManager.instance.CurrentLevel = tmp - 1;
+        Debug.Log(tmp);
+        StartCoroutine(AnimationLoad(RecordManager.instance.GetCurrentLevelName()));
     }
 
     public void NextLevel()
     {
-        MatchCollection matches = Regex.Matches(SceneManager.GetActiveScene().name, @"\d+");
-
-        int num = 0;
-        foreach (Match match in matches) // Pretty useless at only 1 int SHOULD ever return. But it ok :)
-        {
-            num = int.Parse(match.Value);
-        }
-
-        if (num == 9)
-        {
-            return;
-        }
-        num++;
-        string newSceneName = "Level" + num;
+        RecordManager.instance.CurrentLevel ++;
         PlayClickSound();
-        StartCoroutine(AnimationLoad(newSceneName));
+        StartCoroutine(AnimationLoad(RecordManager.instance.GetCurrentLevelName()));
     }
 
     IEnumerator AnimationLoad(string sceneName)
@@ -121,26 +108,11 @@ public class MMFrontEnd : MonoBehaviour
             // Play Main Menu Music here
             FindObjectOfType<AudioControl>().PlayMusic("MainMenuMusic");
         }
-        else if (SceneManager.GetActiveScene().name != "Main Menu")
+        else
         {
-            // Keep Looping
-            if (int.Parse(sceneName.Substring(5)) == 5 && int.Parse(SceneManager.GetActiveScene().name.Substring(5)) == 4)
-            {
-                FindObjectOfType<AudioControl>().PlayMusic("LevelMusic2");
-            }
+            FindObjectOfType<AudioControl>().PlayMusic(RecordManager.instance.GetCurrentLevelMusic());
         }
-        else if (sceneName != "Main Menu")
-        {
-            // Keep Looping
-            if (int.Parse(sceneName.Substring(5)) < 5)
-            {
-                FindObjectOfType<AudioControl>().PlayMusic("LevelMusic1");
-            }
-            else
-            {
-                FindObjectOfType<AudioControl>().PlayMusic("LevelMusic2");
-            }
-        }
+        
         //Load Scene
         SceneManager.LoadScene(sceneName);
     }
