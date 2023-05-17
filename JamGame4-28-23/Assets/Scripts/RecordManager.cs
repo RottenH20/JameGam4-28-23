@@ -36,7 +36,7 @@ public class RecordManager : MonoBehaviour {
             transform.parent = null;
             DontDestroyOnLoad(gameObject);
             LoadTimes();
-            if (CurrentLevel == 0) {
+            if (CurrentLevel == -1) {
                 FindCurrentLevel();
             }
         } else {
@@ -47,10 +47,12 @@ public class RecordManager : MonoBehaviour {
     void FindCurrentLevel() {
         for(int i = 0; i < currentCampaign.levels.Length; i++) {
             if(SceneManager.GetActiveScene().name == currentCampaign.levels[i].sceneName) {
+                Debug.Log("found level " + i.ToString(), this);
                 CurrentLevel = i;
                 return;
             }
         }
+        Debug.Log("No Level found", this);
     }
 
     public string GetTimesPath() {
@@ -103,7 +105,7 @@ public class RecordManager : MonoBehaviour {
     }
 
     public float GetLevelTime(int levelNumber) {
-        if(times.TryGetValue(currentCampaign.levels[levelNumber].sceneName,out float time)) {
+        if(levelNumber > -1 && times.TryGetValue(currentCampaign.levels[levelNumber].sceneName,out float time)) {
             return time;
         }
         return -1;
@@ -134,6 +136,8 @@ public class RecordManager : MonoBehaviour {
     }
 
     public string GetCurrentLevelMusic() {
+        if (CurrentLevel == -1)
+            return "LevelMusic1";
         return currentCampaign.levels[CurrentLevel].music;
     }
 

@@ -50,6 +50,9 @@ public class LevelManager : MonoBehaviour {
         OldTimeTracker.SetActive(false); // We set old time to false (got in the way of end screen)
         WinScreen.SetActive(true);
         player.gameObject.SetActive(false);
+
+        if (RecordManager.instance.CurrentLevel == -1)
+            return;
         float bestTime = RecordManager.instance.GetLevelTime(RecordManager.instance.CurrentLevel);
         if (finalTime < bestTime || bestTime < 0) {
             RecordManager.instance.SetNewTime(finalTime); // Set new best Time
@@ -60,7 +63,6 @@ public class LevelManager : MonoBehaviour {
             times.text = "Best Time: " + bestTime.ToString("0.00") + "\n"
                 + "Current Time: " + finalTime.ToString("0.00");
         }
-
         timeNeeded.text = "Bronze: " + RecordManager.instance.GetCurrentLevel().bronzeTime + ", " +
             "Silver: " + RecordManager.instance.GetCurrentLevel().silverTime + ", " +
             "Gold: " + RecordManager.instance.GetCurrentLevel().goldTime;

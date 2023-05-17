@@ -79,7 +79,7 @@ public class MMFrontEnd : MonoBehaviour
         crashSound.Play();
         tmp =  int.Parse(EventSystem.current.currentSelectedGameObject.name.Substring(EventSystem.current.currentSelectedGameObject.name.Length-1)); // Get the "text" from the level
         RecordManager.instance.CurrentLevel = tmp - 1;
-        Debug.Log(tmp);
+        //Debug.Log(tmp);
         StartCoroutine(AnimationLoad(RecordManager.instance.GetCurrentLevelName()));
     }
 
@@ -106,11 +106,11 @@ public class MMFrontEnd : MonoBehaviour
         else if (sceneName == "Main Menu")
         {
             // Play Main Menu Music here
-            FindObjectOfType<AudioControl>().PlayMusic("MainMenuMusic");
+            AudioControl.instance.PlayMusic("MainMenuMusic");
         }
         else
         {
-            FindObjectOfType<AudioControl>().PlayMusic(RecordManager.instance.GetCurrentLevelMusic());
+            AudioControl.instance.PlayMusic(RecordManager.instance.GetCurrentLevelMusic());
         }
         
         //Load Scene
