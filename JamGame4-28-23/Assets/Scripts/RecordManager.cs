@@ -59,12 +59,12 @@ public class RecordManager : MonoBehaviour {
 
     public void SaveTimes() {
         try {
-            Debug.Log("saving " + GetTimesPath());
-            foreach(KeyValuePair<string,float> pair in times) {
-                Debug.Log(pair.Key + pair.Value.ToString());
-            }
+            //Debug.Log("saving " + GetTimesPath());
+            //foreach(KeyValuePair<string,float> pair in times) {
+            //    Debug.Log(pair.Key + pair.Value.ToString());
+            //}
             string jsonData = JsonUtility.ToJson(new SerializableDictionary(times));
-            Debug.Log(jsonData);
+            //Debug.Log(jsonData);
             File.WriteAllText(GetTimesPath(), jsonData);
         } catch (System.Exception ex) {
             Debug.LogError("Failed to save times: " + ex.Message);
@@ -73,9 +73,9 @@ public class RecordManager : MonoBehaviour {
 
     public void LoadTimes() {
         try {
-            Debug.Log("loading " + GetTimesPath()); 
+            //Debug.Log("loading " + GetTimesPath()); 
             string jsonData = File.ReadAllText(GetTimesPath());
-            Debug.Log(jsonData);
+            //Debug.Log(jsonData);
             SerializableDictionary tempData = JsonUtility.FromJson<SerializableDictionary>(jsonData);
             times.Clear();
             for (int i = 0; i < tempData.keys.Count; i++) {
@@ -83,9 +83,9 @@ public class RecordManager : MonoBehaviour {
                 float value = tempData.values[i];
                 times[key] = value;
             }
-            foreach (KeyValuePair<string, float> pair in times) {
-                Debug.Log(pair.Key + pair.Value.ToString());
-            }
+            //foreach (KeyValuePair<string, float> pair in times) {
+            //    Debug.Log(pair.Key + pair.Value.ToString());
+            //}
         } catch (FileNotFoundException ex) {
             Debug.LogWarning("Failed to load times: " + ex.Message);
         } catch (System.Exception ex) {
