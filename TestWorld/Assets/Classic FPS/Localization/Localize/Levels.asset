@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ea46d3882aef74590dff21d890a506, type: 3}
+  m_Name: Levels
+  m_EditorClassIdentifier: 
+  _manager: {fileID: 11400000, guid: 324dd5f409d96054f9e148fc1779fab5, type: 2}
+  wordList:
+  - key: ep_1
+    englishText: Begin
+    stringList:
+    - Wprowadzenie
+    - episoze1
+    - episoze1
+  - key: lv_1_ep_1
+    englishText: Demo Scene
+    stringList:
+    - Scena Demonstracyjna
+    - Demo Scene
+    - Demo Scene
+  - key: lv_2_ep_1
+    englishText: Fallen Lab
+    stringList:
+    - "Upad\u0142e Laboratorium"
+    - Fallen Lab
+    - Fallen Lab
+  - key: ep_spec_deadly_race
+    englishText: Deadly Race [Beta]
+    stringList:
+    - "Wy\u015Bcig \u015Amierci [Beta]"
+    - Deadly Race [Beta]
+    - Deadly Race [Beta]
+  - key: ep_spec_wave_mode
+    englishText: Wave Mode [Beta]
+    stringList:
+    - Tryb Fali [Beta]
+    - Wave Mode [Beta]
+    - Wave Mode [Beta]
+  - key: ep_spec_arcade_mode
+    englishText: Arcade Mode
+    stringList:
+    - Tryb Arcade
+    - Arcade Mode
+    - Arcade Mode
+  - key: lv_1_ep_spec
+    englishText: Death Ring
+    stringList:
+    - "\u015Amiertelny Ring"
+    - El anillo mortal
+    - "\u0421\u043C\u0435\u0440\u0442\u0435\u043B\u044C\u043D\u0435 \u043A\u0456\u043B\u044C\u0446\u0435"

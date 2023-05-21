@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Classic FPS/Scene/Main Scene.unity
+    guid: 6a0152a4a9e10574ab44ba7320080316
+  - enabled: 1
+    path: Assets/Classic FPS/Scene/E1M2.unity
+    guid: 88f9763daf8f033499e5192cb466b11f
+  - enabled: 1
+    path: Assets/Classic FPS/Scene/Demo_Scene.unity
+    guid: 6f39e8b2d15688644b889b06a7c554c7
+  - enabled: 1
+    path: Assets/Classic FPS/Scene/Game Mode Map/Arcade/E1M1_Arcade.unity
+    guid: bcf06ba08b987a648ac287359483229d
+  - enabled: 1
+    path: Assets/Classic FPS/Scene/Game Mode Map/Wave/Demo_Lv1_Wave.unity
+    guid: 8d7c4dc26c8dc0a4b9f97e4277cad44f
+  - enabled: 1
+    path: Assets/Classic FPS/Scene/Game Mode Map/Deadly_Race/Demo_Lv1_DeadlyRace.unity
+    guid: 3b62c2c6e0d09144aa6cf55a77b67a67
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 4eb399bf3094cf4478cdbebcd7e082e1, type: 2}

@@ -1,0 +1,216 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ea46d3882aef74590dff21d890a506, type: 3}
+  m_Name: Ability
+  m_EditorClassIdentifier: 
+  _manager: {fileID: 11400000, guid: 324dd5f409d96054f9e148fc1779fab5, type: 2}
+  wordList:
+  - key: health_regen_name
+    englishText: Willing to live
+    stringList:
+    - "Ch\u0119\u0107 do \u017Cycia"
+    - La voluntad de vivir
+    - "\u0412\u043E\u043B\u044F \u0434\u043E \u0436\u0438\u0442\u0442\u044F"
+  - key: health_regen_desc
+    englishText: After a while without receiving damage, the player regains health
+    stringList:
+    - "Po chwili bez otrzymywania obra\u017Ce\u0144, gracz odzyskuje \u017Cycie"
+    - "Despu\xE9s de un tiempo sin recibir da\xF1o, el jugador recupera la vida."
+    - "\u0427\u0435\u0440\u0435\u0437 \u0434\u0435\u044F\u043A\u0438\u0439 \u0447\u0430\u0441,
+      \u043D\u0435 \u043E\u0442\u0440\u0438\u043C\u0443\u044E\u0447\u0438 \u043F\u043E\u0448\u043A\u043E\u0434\u0436\u0435\u043D\u044C,
+      \u0433\u0440\u0430\u0432\u0435\u0446\u044C \u043F\u043E\u0432\u0435\u0440\u0442\u0430\u0454\u0442\u044C\u0441\u044F
+      \u0434\u043E \u0436\u0438\u0442\u0442\u044F"
+  - key: armor_regen_name
+    englishText: Auto Repair Armor
+    stringList:
+    - "Samonaprawiaj\u0105ca si\u0119 tarcza"
+    - Escudo autocurativo
+    - "\u0421\u0430\u043C\u043E\u0432\u0456\u0434\u043D\u043E\u0432\u043B\u044E\u0432\u0430\u043B\u044C\u043D\u0438\u0439
+      \u0449\u0438\u0442"
+  - key: armor_regen_desc
+    englishText: After a while without receiving damage, the player regains armor
+    stringList:
+    - "Po chwili bez otrzymywania obra\u017Ce\u0144, gracz odzyskuje tarcze"
+    - "Despu\xE9s de un tiempo sin recibir da\xF1o, el jugador recupera sus escudos."
+    - "\u0427\u0435\u0440\u0435\u0437 \u0434\u0435\u044F\u043A\u0438\u0439 \u0447\u0430\u0441,
+      \u043D\u0435 \u043E\u0442\u0440\u0438\u043C\u0443\u044E\u0447\u0438 \u043F\u043E\u0448\u043A\u043E\u0434\u0436\u0435\u043D\u044C,
+      \u0433\u0440\u0430\u0432\u0435\u0446\u044C \u0432\u0456\u0434\u043D\u043E\u0432\u043B\u044E\u0454
+      \u0441\u0432\u043E\u0457 \u0449\u0438\u0442\u0438"
+  - key: regen_name
+    englishText: Regeneration
+    stringList:
+    - Regeneracja
+    - "Regeneraci\xF3n"
+    - "\u0420\u0435\u0433\u0435\u043D\u0435\u0440\u0430\u0446\u0456\u044F"
+  - key: regen_desc
+    englishText: After a while without receiving damage, the player slowly regains
+      health and armor
+    stringList:
+    - "Po chwili bez otrzymywania obra\u017Ce\u0144, gracz powoli odzyskuje \u017Cycie
+      i tarcze"
+    - "Despu\xE9s de un tiempo sin recibir da\xF1o, el jugador recupera vida y escudos
+      lentamente."
+    - "\u0427\u0435\u0440\u0435\u0437 \u0434\u0435\u044F\u043A\u0438\u0439 \u0447\u0430\u0441,
+      \u043D\u0435 \u043E\u0442\u0440\u0438\u043C\u0443\u044E\u0447\u0438 \u043F\u043E\u0448\u043A\u043E\u0434\u0436\u0435\u043D\u044C,
+      \u0433\u0440\u0430\u0432\u0435\u0446\u044C \u043F\u043E\u0432\u0456\u043B\u044C\u043D\u043E
+      \u0432\u0456\u0434\u043D\u043E\u0432\u043B\u044E\u0454 \u0436\u0438\u0442\u0442\u044F
+      \u0442\u0430 \u0449\u0438\u0442\u0438"
+  - key: health_boost_name
+    englishText: Healthy Lifestyle
+    stringList:
+    - "Zdrowy Tryb \u017Bycia"
+    - Estilo de vida saludable
+    - "\u0417\u0434\u043E\u0440\u043E\u0432\u0438\u0439 \u0441\u043F\u043E\u0441\u0456\u0431
+      \u0436\u0438\u0442\u0442\u044F"
+  - key: health_boost_desc
+    englishText: Player has an increased level of health
+    stringList:
+    - "Gracz posiada podwy\u017Cszony poziom \u017Cycia"
+    - El jugador tiene un mayor nivel de vida.
+    - "\u0413\u0440\u0430\u0432\u0435\u0446\u044C \u043C\u0430\u0454 \u043F\u0456\u0434\u0432\u0438\u0449\u0435\u043D\u0438\u0439
+      \u0440\u0456\u0432\u0435\u043D\u044C \u0436\u0438\u0442\u0442\u044F"
+  - key: armor_boost_name
+    englishText: Stronger Armor
+    stringList:
+    - Mocniejsza Zbroja
+    - "Armadura m\xE1s fuerte"
+    - "\u041C\u0456\u0446\u043D\u0456\u0448\u0430 \u0431\u0440\u043E\u043D\u044F"
+  - key: armor_boost_desc
+    englishText: Player has an increased level of armor
+    stringList:
+    - "Gracz posiada podwy\u017Cszony poziom Tarczy"
+    - El jugador tiene un mayor nivel de Escudo.
+    - "\u0413\u0440\u0430\u0432\u0435\u0446\u044C \u043C\u0430\u0454 \u043F\u0456\u0434\u0432\u0438\u0449\u0435\u043D\u0438\u0439
+      \u0440\u0456\u0432\u0435\u043D\u044C \u0449\u0438\u0442\u0430"
+  - key: speed_boost_name
+    englishText: Hermes sandals
+    stringList:
+    - "Sanda\u0142y Hermesa"
+    - "sandalias Herm\xE8s"
+    - "\u0411\u043E\u0441\u043E\u043D\u0456\u0436\u043A\u0438 Hermes"
+  - key: speed_boost_desc
+    englishText: Player has increased speed
+    stringList:
+    - "Gracz posiada zwi\u0119kszon\u0105 pr\u0119dko\u015B\u0107"
+    - El jugador ha aumentado la velocidad.
+    - "\u0423 \u0433\u0440\u0430\u0432\u0446\u044F \u0437\u0440\u043E\u0441\u043B\u0430
+      \u0448\u0432\u0438\u0434\u043A\u0456\u0441\u0442\u044C"
+  - key: weapon_boost_name
+    englishText: Training Makes the Champion
+    stringList:
+    - Trening czyni Mistrza
+    - "La pr\xE1ctica hace la perfecci\xF3n"
+    - "\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 \u0440\u043E\u0431\u0438\u0442\u044C
+      \u0434\u043E\u0441\u043A\u043E\u043D\u0430\u043B\u0438\u043C"
+  - key: weapon_boost_desc
+    englishText: The player is a master of the Weapon and can make better use of
+      it
+    stringList:
+    - "Gracz jest mistrzem Broni i potrafi lepiej j\u0105 wykorzysta\u0107"
+    - "El jugador es un maestro de las Armas y sabe c\xF3mo usarlas mejor."
+    - "\u0413\u0440\u0430\u0432\u0435\u0446\u044C \u0454 \u043C\u0430\u0439\u0441\u0442\u0440\u043E\u043C
+      \u0432\u043E\u043B\u043E\u0434\u0456\u043D\u043D\u044F \u0437\u0431\u0440\u043E\u0454\u044E
+      \u0456 \u0437\u043D\u0430\u0454, \u044F\u043A \u043A\u0440\u0430\u0449\u0435
+      \u043D\u0435\u044E \u043A\u043E\u0440\u0438\u0441\u0442\u0443\u0432\u0430\u0442\u0438\u0441\u044F"
+  - key: ability_supply_drop_name
+    englishText: Supply Drop
+    stringList:
+    - Zrzut Zaopatrzenia
+    - "Ca\xEDda de suministro"
+    - "\u041F\u0430\u0434\u0456\u043D\u043D\u044F \u043F\u043E\u0441\u0442\u0430\u0447\u0430\u043D\u043D\u044F"
+  - key: ability_supply_drop_desc
+    englishText: Extra Ammo
+    stringList:
+    - Dodatkowa Amunicja
+    - "Munici\xF3n extra"
+    - "\u0414\u043E\u0434\u0430\u0442\u043A\u043E\u0432\u0456 \u0431\u043E\u0454\u043F\u0440\u0438\u043F\u0430\u0441\u0438"
+  - key: ability_self_explosion_name
+    englishText: Seismic Blast
+    stringList:
+    - Wybuch Sejsmiczny
+    - "explosi\xF3n s\xEDsmica"
+    - "\u0421\u0435\u0439\u0441\u043C\u0456\u0447\u043D\u0438\u0439 \u0432\u0438\u0431\u0443\u0445"
+  - key: ability_self_explosion_desc
+    englishText: Seismic Blast deals a lot of damage to nearby enemies
+    stringList:
+    - "Wybuch sejsmiczny zadaje pobliskim przeciwnikom du\u017Ce obra\u017Cenia"
+    - "La explosi\xF3n s\xEDsmica inflige mucho da\xF1o a los enemigos cercanos."
+    - "\u0421\u0435\u0439\u0441\u043C\u0456\u0447\u043D\u0438\u0439 \u0432\u0438\u0431\u0443\u0445
+      \u0437\u0430\u0432\u0434\u0430\u0454 \u0432\u0435\u043B\u0438\u043A\u043E\u0457
+      \u0448\u043A\u043E\u0434\u0438 \u0432\u043E\u0440\u043E\u0433\u0430\u043C \u043F\u043E\u0431\u043B\u0438\u0437\u0443"
+  - key: ability_health_name
+    englishText: Life Injection
+    stringList:
+    - "Zastrzyk \u017Bycia"
+    - "Inyecci\xF3n de vida"
+    - "\u0406\u043D'\u0454\u043A\u0446\u0456\u044F \u0436\u0438\u0442\u0442\u044F"
+  - key: ability_health_desc
+    englishText: The player immediately gets an injection of extra health
+    stringList:
+    - "Gracz natychmiastowo dostaje zastrzyk dodatkowego \u017Cycia"
+    - "El jugador recibe inmediatamente una inyecci\xF3n de vida extra."
+    - "\u0413\u0440\u0430\u0432\u0435\u0446\u044C \u0432\u0456\u0434\u0440\u0430\u0437\u0443
+      \u0436 \u043E\u0442\u0440\u0438\u043C\u0443\u0454 \u0456\u043D'\u0454\u043A\u0446\u0456\u044E
+      \u0434\u043E\u0434\u0430\u0442\u043A\u043E\u0432\u043E\u0433\u043E \u0436\u0438\u0442\u0442\u044F"
+  - key: ability_armor_name
+    englishText: Armor Injection
+    stringList:
+    - Zastzrzyk Zbroi
+    - "Inyecci\xF3n de armadura"
+    - "\u0406\u043D'\u0454\u043A\u0446\u0456\u044F \u0431\u0440\u043E\u043D\u0456"
+  - key: ability_armor_desc
+    englishText: The player immediately gets a shot of extra armor
+    stringList:
+    - Gracz natychmiastowo dostaje zastrzyk dodatkowego zbroi
+    - "Inyecci\xF3n de armadura"
+    - "\u0413\u0440\u0430\u0432\u0435\u0446\u044C \u043E\u0434\u0440\u0430\u0437\u0443
+      \u043E\u0442\u0440\u0438\u043C\u0443\u0454 \u0434\u043E\u0434\u0430\u0442\u043A\u043E\u0432\u0443
+      \u0431\u0440\u043E\u043D\u044E"
+  - key: vampirism_name
+    englishText: Vampirism
+    stringList:
+    - Wampiryzm
+    - vampirismo
+    - "\u0432\u0430\u043C\u043F\u0456\u0440\u0438\u0437\u043C"
+  - key: vampirism_desc
+    englishText: Player recovers some of the damage inflicted
+    stringList:
+    - "Gracz odzyskuje cz\u0119\u015B\u0107 zadanych obra\u017Ce\u0144"
+    - "El jugador recupera parte del da\xF1o infligido."
+    - "\u0413\u0440\u0430\u0432\u0435\u0446\u044C \u0432\u0456\u0434\u043D\u043E\u0432\u043B\u044E\u0454
+      \u0447\u0430\u0441\u0442\u0438\u043D\u0443 \u0437\u0430\u0432\u0434\u0430\u043D\u043E\u0457
+      \u0448\u043A\u043E\u0434\u0438"
+  keyOption:
+  - health_regen_name
+  - health_regen_desc
+  - armor_regen_name
+  - armor_regen_desc
+  - regen_name
+  - regen_desc
+  - health_boost_name
+  - health_boost_desc
+  - armor_boost_name
+  - armor_boost_desc
+  - speed_boost_name
+  - speed_boost_desc
+  - weapon_boost_name
+  - weapon_boost_desc
+  - ability_supply_drop_name
+  - ability_supply_drop_desc
+  - ability_self_explosion_name
+  - ability_self_explosion_desc
+  - ability_health_name
+  - ability_health_desc
+  - ability_armor_name
+  - ability_armor_desc
+  - vampirism_name
+  - vampirism_desc

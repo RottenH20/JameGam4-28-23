@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ea46d3882aef74590dff21d890a506, type: 3}
+  m_Name: Interaction
+  m_EditorClassIdentifier: 
+  _manager: {fileID: 11400000, guid: 324dd5f409d96054f9e148fc1779fab5, type: 2}
+  wordList:
+  - key: normal_chest
+    englishText: Normal Chest
+    stringList:
+    - Normalna Skrzynia
+    - 
+    - 
+  - key: open_chest
+    englishText: Open Chest
+    stringList:
+    - "Otw\xF3rz skrzynie"
+    - 
+    - 
+  - key: door
+    englishText: Door
+    stringList:
+    - Drzwi
+    - 
+    - 
+  - key: open_door
+    englishText: Open Door
+    stringList:
+    - "Otw\xF3rz Drzwi"
+    - 
+    - 
+  - key: exit
+    englishText: Exit
+    stringList:
+    - "Wyjd\u017A"
+    - 
+    - 
+  - key: end_level
+    englishText: End Level
+    stringList:
+    - "Uko\u0144cz Poziom"
+    - 
+    - 
+  keyOption:
+  - normal_chest
+  - open_chest
+  - door
+  - open_door
+  - exit
+  - end_level

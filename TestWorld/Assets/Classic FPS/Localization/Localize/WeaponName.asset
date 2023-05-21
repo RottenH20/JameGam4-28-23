@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ea46d3882aef74590dff21d890a506, type: 3}
+  m_Name: WeaponName
+  m_EditorClassIdentifier: 
+  _manager: {fileID: 11400000, guid: 324dd5f409d96054f9e148fc1779fab5, type: 2}
+  wordList:
+  - key: range_pistol
+    englishText: HB27
+    stringList:
+    - HB27
+    - HB27
+    - HB27
+  - key: range_grenade_lancher
+    englishText: RK 800
+    stringList:
+    - RK 800
+    - RK 800
+    - RK 800
+  - key: range_rocket_lancher
+    englishText: Red Death
+    stringList:
+    - "Czerwona \u015Amier\u0107"
+    - muerte roja
+    - "\u0427\u0435\u0440\u0432\u043E\u043D\u0430 \u0441\u043C\u0435\u0440\u0442\u044C"
+  - key: range_infinity_pistol
+    englishText: Demon Pistol
+    stringList:
+    - Demoniczny Pistol
+    - "Pistola demon\xEDaca"
+    - "\u041F\u0456\u0441\u0442\u043E\u043B\u0435\u0442 \u0434\u0435\u043C\u043E\u043D\u0430"
+  - key: range_rifle
+    englishText: HK - S28
+    stringList:
+    - HK - S28
+    - HK - S28
+    - HK - S28
+  - key: range_burst_rifle
+    englishText: Python
+    stringList:
+    - Pyton
+    - "Pit\xF3n"
+    - Python
+  - key: range_sniper
+    englishText: Eagle Eye
+    stringList:
+    - Sokole Oko
+    - "ojo de \xE1guila"
+    - "\u041E\u0440\u043B\u0438\u043D\u0435 \u043E\u043A\u043E"
+  - key: range_double_barrel
+    englishText: DX-32a
+    stringList:
+    - DX-32a
+    - DX-32a
+    - DX-32a
+  - key: range_shotgun
+    englishText: Justice
+    stringList:
+    - Zemsta
+    - Justicia
+    - "\u0421\u043F\u0440\u0430\u0432\u0435\u0434\u043B\u0438\u0432\u0456\u0441\u0442\u044C"
+  - key: melle_axe
+    englishText: Axe
+    stringList:
+    - "Top\xF3r"
+    - Hacha
+    - "\u0441\u043E\u043A\u0438\u0440\u0430"
+  - key: melle_knife
+    englishText: Hunting Knife
+    stringList:
+    - "N\xF3\u017C My\u015Bliwski"
+    - Cuchillo de caza
+    - "\u041C\u0438\u0441\u043B\u0438\u0432\u0441\u044C\u043A\u0438\u0439 \u043D\u0456\u0436"
+  - key: throwable_grenade
+    englishText: Grenade
+    stringList:
+    - Granat
+    - Granada
+    - "\u0413\u0440\u0430\u043D\u0430\u0442\u0430"
+  - key: range_dual_revolver
+    englishText: Dual Revolver
+    stringList:
+    - "Podw\xF3jny Rewolwer"
+    - "Rev\xF3lver doble"
+    - "\u041F\u043E\u0434\u0432\u0456\u0439\u043D\u0438\u0439 \u0440\u0435\u0432\u043E\u043B\u044C\u0432\u0435\u0440"
+  - key: range_charge_gun
+    englishText: Ka-Boom 3000
+    stringList:
+    - Ka-Boom 3000
+    - Ka-Boom 3000
+    - Ka-Boom 3000
+  - key: range_laser_gun
+    englishText: B.O.B.
+    stringList:
+    - B.O.B.
+    - B.O.B.
+    - B.O.B.
+  keyOption:
+  - range_pistol
+  - range_grenade_lancher
+  - range_rocket_lancher
+  - range_infinity_pistol
+  - range_rifle
+  - range_burst_rifle
+  - range_sniper
+  - range_double_barrel
+  - range_shotgun
+  - melle_axe
+  - melle_knife
+  - throwable_grenade
+  - range_dual_revolver
+  - range_charge_gun
+  - range_laser_gun
