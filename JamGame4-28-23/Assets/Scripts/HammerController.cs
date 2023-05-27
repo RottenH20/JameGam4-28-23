@@ -12,7 +12,6 @@ public class HammerController : MonoBehaviour
     HingeJoint2D joint;
     Animator animator;
     Rigidbody2D rigid;
-    Transform hammerParent;
     AudioSource source;
     public float bumpThreshold = 2f;
     public AudioClip[] bumpSounds;
@@ -23,27 +22,20 @@ public class HammerController : MonoBehaviour
         joint = GetComponent<HingeJoint2D>();
         animator = GetComponentInChildren<Animator>();
         rigid = GetComponent<Rigidbody2D>();
-        hammerParent = transform.GetChild(0);
         source = GetComponent<AudioSource>();
+        if (RecordManager.instance.CurrentLevel > -1) {
+            GameObject hammerPrefab = RecordManager.instance.GetCurrentLevel().hammer;
+            if (hammerPrefab != null) {
+                Destroy(joint.connectedBody.gameObject);
+                GameObject hammer = Instantiate(hammerPrefab, transform.position, Quaternion.identity, transform);
+                joint.connectedBody = hammer.GetComponent<Rigidbody2D>();
+            }
+        }
     }
 
     private void Update() {
         rotation = -Input.GetAxisRaw("Horizontal")+ Input.GetAxisRaw("HorizontalReverse");
-        if (Input.GetKey(KeyCode.Alpha1)) {
-            for(int i = 0;i < hammerParent.childCount; i++) {
-                hammerParent.GetChild(i).gameObject.SetActive(i + 1 == 1);
-            }
-        }
-        if (Input.GetKey(KeyCode.Alpha2)) {
-            for (int i = 0; i < hammerParent.childCount; i++) {
-                hammerParent.GetChild(i).gameObject.SetActive(i + 1 == 2);
-            }
-        }
-        if (Input.GetKey(KeyCode.Alpha3)) {
-            for (int i = 0; i < hammerParent.childCount; i++) {
-                hammerParent.GetChild(i).gameObject.SetActive(i + 1 == 3);
-            }
-        }
+
     }
 
     private void FixedUpdate() {
@@ -71,8 +63,8 @@ public class HammerController : MonoBehaviour
                 animator.SetBool("Left", false);
             }
         }
-        if(hammerParent.transform.localPosition.sqrMagnitude > 2) {
-            hammerParent.transform.localPosition = Vector3.zero;
+        if(joint.connectedBody.transform.localPosition.sqrMagnitude > 2) {
+            joint.connectedBody.transform.localPosition = Vector3.zero;
         }
 
     }

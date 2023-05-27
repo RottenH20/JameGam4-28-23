@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40724593439a3484aa06b3ed6e9bb19c, type: 3}
+  m_Name: CampaignClassic
+  m_EditorClassIdentifier: 
+  displayName: ClassicLevels
+  levels:
+  - {fileID: 11400000, guid: 27cec89c875daff4f984cc6f001e5691, type: 2}
+  - {fileID: 11400000, guid: 039eb93dc8675034290522558955243d, type: 2}
+  - {fileID: 11400000, guid: 7eab781c490f2b349ba7f144edebb861, type: 2}
+  - {fileID: 11400000, guid: f191d95375d14554d8f20b3294a3d8ca, type: 2}
+  - {fileID: 11400000, guid: aeb7e6ce5d62397478af48c9620bfff8, type: 2}
+  - {fileID: 11400000, guid: 80ef135ed2764a94e91e01ae240428e4, type: 2}
+  - {fileID: 11400000, guid: 0da2f9a1fcbf11d41ba05e9589d092ee, type: 2}
+  - {fileID: 11400000, guid: aa2469aa8c415ec4389bae38092a029e, type: 2}
+  - {fileID: 11400000, guid: b65dff8b73878b74391fcb9d5eac01ef, type: 2}
