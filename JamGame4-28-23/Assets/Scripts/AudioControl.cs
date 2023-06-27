@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioControl : MonoBehaviour
 {
@@ -14,6 +15,30 @@ public class AudioControl : MonoBehaviour
     public string lastTrackName = "Nothing";
     public int lastTrackIndex;
     public float lastTrackVolume = 0.000f;
+
+    public static AudioControl instance;
+
+    private void Awake() {
+        if (instance == null) {
+            instance = this;
+            transform.parent = null;
+            DontDestroyOnLoad(gameObject);
+            _audioSources = GetComponentsInChildren<AudioSource>();
+            PlayMusic("MainMenuMusic");
+        } else {
+            Destroy(gameObject);
+        }
+    }
+
+    private void Start() {
+        if (instance == this) {
+            if (SceneManager.GetActiveScene().name == "Intro" || SceneManager.GetActiveScene().name == "Main Menu") {
+                PlayMusic("MainMenuMusic");
+            } else {
+                PlayMusic(RecordManager.instance.GetCurrentLevelMusic());
+            }
+        }
+    }
 
     public IEnumerator FadeOutOldMusic_FadeInNewMusic()
     {
@@ -52,15 +77,10 @@ public class AudioControl : MonoBehaviour
         isPlaying = true;
     }
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(transform.gameObject);
-        _audioSources = GetComponentsInChildren<AudioSource>();
-        PlayMusic("MainMenuMusic");
-    }
-
     public void PlayMusic(string transformName)
     {
+        if (playingTrackName == transformName)
+            return;
         for (int a = 0; a < _audioSources.Length; a++)
         {
             if (_audioSources[a].name == transformName)

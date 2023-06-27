@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f82e1fe0cd53b42ad82d68987a237f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentCampaign: {fileID: 11400000, guid: ca16d48a033ae4747afa4286f9cebf6b, type: 2}
   bestTimes:
   - -1
   - -1
