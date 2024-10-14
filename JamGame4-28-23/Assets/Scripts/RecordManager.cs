@@ -36,9 +36,9 @@ public class RecordManager : MonoBehaviour {
             transform.parent = null;
             DontDestroyOnLoad(gameObject);
             LoadTimes();
-            if (CurrentLevel == -1) {
-                FindCurrentLevel();
-            }
+            //if (CurrentLevel == -1) {
+                //FindCurrentLevel();
+            //}
         } else {
             Destroy(gameObject);
         }

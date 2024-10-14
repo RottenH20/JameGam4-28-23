@@ -18,11 +18,13 @@ public class MMFrontEnd : MonoBehaviour
     public Transform playButton;
     public AudioSource crashSound, ClickSound;
     public AudioSource[] RestartSound = new AudioSource[3];
+    public GameObject OptionsMenu;
 
     // Pretty poorly written. Sorry :(
     private void Start()
     {
         transition = GameObject.Find("CircleFade").GetComponent<Animator>();
+        OptionsMenu = GameObject.Find("OptionsMenu");
     }
 
     void PrepareMedals() {
@@ -122,6 +124,19 @@ public class MMFrontEnd : MonoBehaviour
         levelSelect.gameObject.SetActive(true);
         PlayClickSound();
         PrepareMedals();
+    }
+
+    public void OpenOptionsMenu()
+    {
+        playButton.gameObject.SetActive(false);
+        //Options Menu SetActive
+
+        PlayClickSound();
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
     public void PlayClickSound()
