@@ -68,14 +68,14 @@ public class HammerController : MonoBehaviour
             maxMotorTorque = motorForce,
         };
         
-        if(rigid.velocity.y < -fallThreshold) {
+        if(rigid.linearVelocity.y < -fallThreshold) {
             animator.SetBool("Falling", true);
             animator.SetBool("Left", false);
             animator.SetBool("Right", false);
         } else {
             animator.SetBool("Falling", false);
-            if(Mathf.Abs(rigid.velocity.x) > flyThreshold) {
-                if(rigid.velocity.x > 0) {
+            if(Mathf.Abs(rigid.linearVelocity.x) > flyThreshold) {
+                if(rigid.linearVelocity.x > 0) {
                     animator.SetBool("Right", true);
                     animator.SetBool("Left", false);
                 } else {
